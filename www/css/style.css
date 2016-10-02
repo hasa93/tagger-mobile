@@ -1,1 +1,58 @@
-/* Empty. Add your own CSS if you like */
+.padding{
+	background-image: url(../img/3.jpg);
+
+}
+.loginbutton{
+	background-color:#FE874B;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:1px;
+	display:inline-block;
+	cursor:pointer;
+	color:white;
+	font-family:Arial;
+	font-size:19px;
+	font-weight:bold;
+	padding:5px 143px;
+	text-decoration:none;
+	margin-top:  190px;
+}
+
+.loginbutton:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #E87C45), color-stop(1, #33bdef));
+	background:linear-gradient(to bottom, #E87C45 5%, #E87C45 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#019ad2', endColorstr='#33bdef',GradientType=0);
+	background-color:#E87C45;
+}
+.loginbutton:active {
+	position:relative;
+	top:1px;
+}
+
+.signupbutton{
+	background-color:#0BBEE2;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	border:1px;
+	display:inline-block;
+	cursor:pointer;
+	color:white;
+	font-family:Arial;
+	font-size:19px;
+	font-weight:bold;
+	padding:5px 136px;
+	text-decoration:none;
+	margin-top: 20px;
+}
+
+.signupbutton:hover{
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #08AED0), color-stop(1, #33bdef));
+	background:linear-gradient(to bottom, #08AED0 5%, #08AED0 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#019ad2', endColorstr='#33bdef',GradientType=0);
+	background-color:#08AED0;
+}
+
+.signupbutton:active {
+	position:relative;
+	top:1px;
+}
