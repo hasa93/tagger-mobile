@@ -15,7 +15,7 @@ angular.module('starter', ['ionic'])
     controller:'SignupCtrl'
   })
   
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/signup');
 })    
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

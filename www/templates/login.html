@@ -1,15 +1,12 @@
   <ion-view view-title="Login" name="login-view">
    <ion-content class="padding">
       <div class ="center">
-         <div class="list list-inset">
-           <label class="item item-input">
-             <input type="text" placeholder="Username" ng-model="username">
-           </label>
-           <label class="item item-input">
-             <input type="password" placeholder="Password" ng-model="password">
-           </label>
-         </div>
-        
+        <div class="uname">
+          <input type="text" placeholder="Username" ng-model="username" size="40"> 
+        </div>
+        <div class="psswrd">
+          <input type="password" placeholder="Password" ng-model="password" size="40"> 
+        </div>
          <button class="loginbutton" ng-click="login()">Login</button>
          <button class="signupbutton" ng-click="signup()">Signup</button>  
       </div>
