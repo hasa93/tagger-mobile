@@ -1,3 +1,4 @@
+<<<<<<< f01f0430cda43a96de800c4ddfcf842ebe0443fe
   <ion-view view-title="Login" name="login-view">
    <ion-content class="padding">
        <div class = "logo center"> <img src="/img/logo.png" ></div>
@@ -12,6 +13,36 @@
         </div>
          <button class="loginbutton" ng-click="login()">Login</button>
          <button class="signupbutton" ng-click="signup()">Signup</button>  
+=======
+  <ion-view view-title="Login" class="pane">
+   <ion-content scroll="false">
+      <div class="logo center">
+        <div id="element"> <center> <img src="../img/logo.png"></center> </div>
+>>>>>>> change ui
       </div>
+      <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="Username" ng-model="username" style="color: white;text-align: center; font-size: 16px">
+          </label>
+          <label class="item item-input">
+            <input type="password" placeholder="Password" ng-model="password" style="color: white;text-align: center;font-size: 16px">
+          </label>
+      </div>
+      <div class="row">
+          <div class="col text-center">
+            <button class="loginbutton" ng-click="login()" style="font-size: 16px">
+               Login
+            </button>
+            </div></div>
+        <div class="row ">
+            <div class="col col text-center">
+                <button class="button button-clear button-light" ng-click="signup()" style="font-size: 18px;color: white ">
+                    Sign up
+                 </button>
+
+            </div>
+        </div>
+        <a href="#" style="color: white;font-size: 16px">Forgot Password ?</a>
+          
    </ion-content>
   </ion-view>
