@@ -1,0 +1,21 @@
+<ion-view view-title="Forget Password" name="forgetpassword-view">
+ <ion-content ng-controller="ForgetCtrl">
+    <form name="myForm1">
+      <div class="list">
+          <label class="item item-input">
+            <input type="email" placeholder="Enter Email" ng-model="email" name="email" style="color: white;text-align: center; font-size: 16px" required>
+          </label>
+      </div>
+      <div class="padding">
+      	<p ng-show="myForm1.email.$invalid && !myForm1.email.$pristine">* please enter valid email address</p>
+      </div>
+      <div class="row ">
+          <div class="col col text-center">
+              <button class="forgetbutton" value="Forget" ng-disabled="myForm1.$invalid" ng-click="enter()" style="font-size: 16px">
+               Enter
+            </button>
+          </div>
+      </div>
+    </form>
+  </ion-content>
+ </ion-view>

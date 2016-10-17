@@ -1,0 +1,24 @@
+<ion-view class="profile-view">
+  <ion-nav-title>
+    <span>Profile</span>
+  </ion-nav-title>
+  <ion-content>
+    <div class="list card profile">
+      <div class="item title">
+        <h2 class="profile-name">{{profile.name}}</h2>
+      </div>
+      <div class="item item-image">
+        <img class="full-image profile-image" ng-src="{{profile.img}}">
+      </div>
+      <div class="item item-body">
+        <div class="profile-tags">
+          <ul class="profile-tags-list">
+            <li ng-repeat="tag in profile.tags" class="profile-tag-item">
+              <span class="badge badge-energized">{{tag}}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

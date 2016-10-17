@@ -1,5 +1,5 @@
 angular.module("starter")
 
-.controller('SignupCtrl',function($state,$scope){
+.controller('ForgetCtrl',function($state,$scope){
 	console.log("Switch");
 })

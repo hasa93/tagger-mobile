@@ -1,33 +1,26 @@
 <ion-view view-title="Signup" name="sign-view">
  <ion-content class="padding">
-   <div class="sign-list list-inset">
-     <label class="item item-input item-stacked-label">
-        <span class="input-label">First Name</span>
-        <input type="text" placeholder="John">
-     </label>
-     <label class="item item-input item-stacked-label">
-        <span class="input-label">Last Name</span>
-        <input type="text" placeholder="Suhr">
-     </label>
-     <label class="item item-input item-stacked-label">
-         <span class="input-label">Gender</span>
-         <input type="radio" name="gender" value="male">
-         <input type="radio" name="gender" value="female">
-     </label>
-     <label class="item item-input item-stacked-label">
-        <span class="input-label">Address</span>
-        <input type="text" placeholder="No 24,Lakeroad,Boralasgamuwa">
-     </label>
-     <label class="item item-input item-stacked-label">
-        <span class="input-label">Contact Number</span>
-        <input type="text" placeholder="0772409410">
-     </label>
-     <label class="item item-input item-stacked-label">
-        <span class="input-label">Email</span>
-        <input type="text" placeholder="john.Suhr@gmail.com">
-     </label>
+   <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="First Name" ng-model="firstname" style="color: white;text-align: center; font-size: 14px">
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="Last Name" ng-model="lastname" style="color: white;text-align: center;font-size: 14px">
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="Contact" ng-model="contact" style="color: white;text-align: center;font-size: 14px">
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="Username" ng-model="uname" style="color: white;text-align: center;font-size: 14px">
+          </label>
+          <label class="item item-input">
+            <input type="password" placeholder="Password" ng-model="psswrd" style="color: white;text-align: center;font-size: 14px">
+          </label>
+          <label class="item item-input">
+            <input type="password" placeholder="Confirm Password" ng-model="confrmpsswrd" style="color: white;text-align: center;font-size: 14px">
+          </label>
 
-  </div>
-  <button class="sign" ng-click="signup()">Sign Up</button>
+      </div>
+  <button class="signupbutton" ng-click="signup()" style="font-size: 16px">Sign Up</button>
  </ion-content>
 </ion-view>

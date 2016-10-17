@@ -14,7 +14,16 @@ angular.module('starter', ['ionic'])
     templateUrl:'templates/signup.html',
     controller:'SignupCtrl'
   })
-  
+  .state('profile',{
+    url:'/profile',
+    templateUrl:'templates/profile.html',
+    controller:'ProfileCtrl'
+  })
+  .state('forgetpsswrd',{
+    url:'/forgetpsswrd',
+    templateUrl:'templates/forgetpsswrd.html',
+    controller:'ForgetCtrl'
+  })
     $urlRouterProvider.otherwise('/login');
 })    
 .run(function($ionicPlatform) {
