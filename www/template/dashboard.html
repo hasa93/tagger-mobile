@@ -1,0 +1,81 @@
+<ion-view view-title="Dashboard" name="dashboard-view">
+ <ion-nav-buttons side = "right">
+   <button class="button icon-left ion-power button-stable" ng-click="logout()" side ="left"></button>
+    
+  </ion-nav-buttons>
+    <ion-nav-buttons side = "left"  >
+ <button ng-controller ="SideCtrl" menu-toggle = "left" class = "button button-icon icon ion-navicon" side ="right"  ng-click = "toggleLeft()"></button> 
+        
+        </ion-nav-buttons>
+  <ion-content class="padding">
+ <div class ="clearable-input">
+
+       <form class="search  col focus" method="post" action="index.html"  ng-model = "SearchQuery" autofocus autocomplete="on"/ >
+		 <input  name="q" placeholder="Search" />
+		 <ul class="results" >
+			 <li><a href="index.html">Search Result #1<br /><span>Description...</span></a></li>
+			 <li><a href="index.html">Search Result #2<br /><span>Description...</span></a></li>
+	 		<li><a href="index.html">Search Result #3<br /><span>Description...</span></a></li>
+         	<li><a href="index.html">Search Result #4</a></li>
+		 </ul>
+	 </form>
+        </div>
+    <div class="row"><div class="col text-center">
+       <h3 class="title">Welcome {{username}}!</h3>
+       Welcome to the hell.
+       <br><br><br>
+     
+
+  
+       
+        <div class="row ">
+            <div class="col button " ng-click="performValidRequest()">
+                <div class=" tile-medium  tile-green" >
+                    <div class="tile-content">
+                    <div class="tile-title" >Search History</div>
+                        <i class="tile-icon ion-bonfire"></i>
+                    </div>
+           
+                </div>
+            </div>
+            <div class="col button" ng-click="performUnauthorizedRequest()">
+                <div class=" tile-medium tile-red">
+                    <div class="tile-content">
+                        <div class="tile-title" > 	What is New</div>
+                        <i class="tile-icon ion-ios-bolt"></i>                 
+                    </div>
+           
+                </div>
+            </div>
+        </div>
+           <div class="row ">
+            <div class="col button">
+                <div class=" tile-medium  tile-yellow" >
+                    <div class="tile-content">
+                    <div class="tile-title" > Scan Tags</div>
+                        <i class="tile-icon ion-ios-search-strong"></i>
+                    </div>
+           
+                </div>
+            </div>
+            <div class="col button">
+                <div class=" tile-medium tile-purple">
+                    <div class="tile-content">
+                        <div class="tile-title" > Update Profile</div>
+                        <i class="tile-icon ion-loop"></i>                 
+                    </div>
+           
+                </div>
+            </div>
+        </div>
+       
+       	
+ <i class="ion-loop">WTF</i>
+        </div>
+        
+       	<br><br>
+       	{{response}}
+       	</div>
+          
+  </ion-content>
+</ion-view>

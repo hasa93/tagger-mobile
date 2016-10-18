@@ -1,24 +1,23 @@
-<ion-view class="profile-view">
-  <ion-nav-title>
-    <span>Profile</span>
-  </ion-nav-title>
-  <ion-content>
-    <div class="list card profile">
-      <div class="item title">
-        <h2 class="profile-name">{{profile.name}}</h2>
+<ion-view view-title="Profile">
+  <ion-content scroll="false" ng-controller="ProfileCtrl">
+    <div class="header-banner">
+      <img class="profile-pic" src="../img/profile.jpg"/>
+      <div class="back">
+        <button class="btn-back"><</button>
       </div>
-      <div class="item item-image">
-        <img class="full-image profile-image" ng-src="{{profile.img}}">
+      <div class="change_pic">
+        <button class="button button-clear button-light" ng-click="" style="font-size: 14px;color: red">Change Picture</button>
       </div>
-      <div class="item item-body">
-        <div class="profile-tags">
-          <ul class="profile-tags-list">
-            <li ng-repeat="tag in profile.tags" class="profile-tag-item">
-              <span class="badge badge-energized">{{tag}}</span>
-            </li>
-          </ul>
-        </div>
-      </div>
+    </div>
+    <div class="edit">
+      <button class="item ion-compose"></button>
+    </div>
+    <div class="menu_wrapper">
+      <ul class="list1">
+        <li  class="item ion-android-person"> Me {{firstname}} {{lastname}}</li>
+        <li class="item ion-android-call"> Contact {{contact}}</li>
+        <li class="item ion-email"> Email {{email}}</li>
+      </ul>
     </div>
   </ion-content>
 </ion-view>

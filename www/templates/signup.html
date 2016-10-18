@@ -1,6 +1,7 @@
-<ion-view view-title="Signup" name="sign-view">
- <ion-content class="padding">
-   <div class="list">
+<ion-view view-title="Signup">
+ <ion-content scroll="false" ng-controller="SignupCtrl">
+    <div class="background-image2">
+     <div class="list">
           <label class="item item-input">
             <input type="text" placeholder="First Name" ng-model="firstname" style="color: white;text-align: center; font-size: 14px">
           </label>
@@ -9,6 +10,9 @@
           </label>
           <label class="item item-input">
             <input type="text" placeholder="Contact" ng-model="contact" style="color: white;text-align: center;font-size: 14px">
+          </label>
+          <label class="item item-input">
+            <input type="email" placeholder="Email" ng-model="email" style="color: white;text-align: center;font-size: 14px">
           </label>
           <label class="item item-input">
             <input type="text" placeholder="Username" ng-model="uname" style="color: white;text-align: center;font-size: 14px">
@@ -20,7 +24,8 @@
             <input type="password" placeholder="Confirm Password" ng-model="confrmpsswrd" style="color: white;text-align: center;font-size: 14px">
           </label>
 
-      </div>
-  <button class="signupbutton" ng-click="signup()" style="font-size: 16px">Sign Up</button>
+    </div>
+   <button class="signupbutton" ng-click="signup()" style="font-size: 16px">Sign Up</button>
+  </div>
  </ion-content>
 </ion-view>

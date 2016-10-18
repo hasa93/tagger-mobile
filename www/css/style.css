@@ -1,9 +1,51 @@
-.pane{
-	background: url("../img/11.jpg") no-repeat center center fixed;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	background-size: cover;
+.background-image1{
+  background: url("../img/11.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
 }
+
+.background-image2{
+  background: url("../img/11.jpg") no-repeat;
+  
+}
+
+.header-banner{
+  background: url("../img/3.jpg") no-repeat;
+  background-size: 120%;
+  height: 79vh;
+  margin-bottom: -250px;
+}
+
+.profile-pic{
+  display: inline-block;
+  border-radius: 100%;
+  width: 20vh;
+  height: 20vh;
+  margin-top: 14%;
+  margin-left: 33%;
+}
+.change_pic{
+  margin-left: 220px;
+  margin-top: 40px;
+}
+.back{
+  margin-top: -120px;
+  margin-left: 20px;
+  opacity: 1%;
+}
+.btn-back{
+  font-family: Arial;
+  color: black;
+  font-size: 37px;
+  padding: 0px 0px 0px 0px;
+  text-decoration: none;
+  opacity: .4;
+}
+.edit{
+  margin-left: 290px;
+}
+
 .loginbutton{
   width:250px;
   background: #eb0319;
@@ -16,9 +58,12 @@
   padding: 10px 10px;
   margin-top: 12%;
 }
+.menu_wrapper{
+  margin-top: 2%;
+}
 .loginbutton:active {
-	position:relative;
-	top:1px;
+  position:relative;
+  top:1px;
 }
 .signupbutton{
   width:250px;
@@ -54,14 +99,14 @@
   top:1px;
 }
 .list{
-	width: 250px;
-	margin: 0 auto;
-	border: 0;
-	margin-top: 40%;
+  width: 250px;
+  margin: 0 auto;
+  border: 0;
+  margin-top: 40%;
 }
 .logo{
-	padding: 80px 10px 20px 120px;
-	height: 13px;
+  padding: 80px 10px 20px 120px;
+  height: 13px;
   
   width: 12px;
 }
@@ -76,8 +121,8 @@
     border-bottom: 1px solid white;
 }
 input::-webkit-input-placeholder{
-	color: white;
-	text-align: center;
+  color: white;
+  text-align: center;
 }
 
 
@@ -89,7 +134,7 @@ input::-webkit-input-placeholder{
 }
 
 .item{
-	padding: 15px;
-	padding-top: 10px;
-	padding-bottom: 4px;
+  padding: 15px;
+  padding-top: 10px;
+  padding-bottom: 4px;
 }

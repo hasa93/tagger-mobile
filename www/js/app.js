@@ -14,6 +14,11 @@ angular.module('starter', ['ionic'])
     templateUrl:'templates/signup.html',
     controller:'SignupCtrl'
   })
+  .state('menu',{
+    url:'/menu',
+    templateUrl:'templates/menu.html',
+    controller:'SidebarCtrl'
+  })
   .state('profile',{
     url:'/profile',
     templateUrl:'templates/profile.html',
@@ -24,7 +29,7 @@ angular.module('starter', ['ionic'])
     templateUrl:'templates/forgetpsswrd.html',
     controller:'ForgetCtrl'
   })
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/profile');
 })    
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
