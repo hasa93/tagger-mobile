@@ -8,7 +8,11 @@ angular.module('starter', ['ionic'])
     templateUrl:'templates/login.html',
     controller:'LoginCtrl'
   })
-  
+  .state('dash',{
+  	url:'/dash',
+  	templateUrl:'templates/dashboard.html',
+  	controller:'DashCtrl'
+  })
   .state('signup',{
     url:'/signup',
     templateUrl:'templates/signup.html',
@@ -29,7 +33,7 @@ angular.module('starter', ['ionic'])
     templateUrl:'templates/forgetpsswrd.html',
     controller:'ForgetCtrl'
   })
-    $urlRouterProvider.otherwise('/profile');
+    $urlRouterProvider.otherwise('/dash');
 })    
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

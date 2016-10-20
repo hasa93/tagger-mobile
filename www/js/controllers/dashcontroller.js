@@ -1,5 +1,5 @@
 angular.module('TaggerMobile')
 
-.controller('DashCtrl', function($scope, nfcService) {
+.controller('DashCtrl', function($state,$scope, nfcService) {
   console.log("In Dash Controller");
 })
