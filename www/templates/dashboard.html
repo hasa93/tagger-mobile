@@ -1,24 +1,20 @@
 <ion-view view-title = "Dashboard">
     <br>
 <ion-content class = "padding">
-    <form class="search col focus" method="post">
-    <div class="content row">
-        <div class = "col">
-            <label class="item item-input">
-                    <i class="icon ion-search placeholder-icon"></i>
-                    <input type="search" placeholder="Search">
-                 <ul class="results" >
-			 <li><a href="index.html">Search Result #1<br /><span>Description...</span></a></li>
-			 <li><a href="index.html">Search Result #2<br /><span>Description...</span></a></li>
-	 		<li><a href="index.html">Search Result #3<br /><span>Description...</span></a></li>
-         	<li><a href="index.html">Search Result #4</a></li>
+     <div class ="clearable-input content">
+
+       <form class="search  col focus" method="post" action="index.html"  ng-model = "SearchQuery" autofocus autocomplete="on"/ >
+		 <input type ="search" name="q" placeholder="Search" />
+		 <ul class="results" >
+			<li> <ion-item class = "item-thumbnail-center" href = '#'><h3>Product Name1</h3><a href = "#"></a></ion-item></li>
+             <li> <ion-item class = "item-thumbnail-center" href = '#'><h3>Product Name2</h3></ion-item></li>
+             <li> <ion-item class = "item-thumbnail-center" href = '#'><h3>Product Name3</h3></ion-item></li>
+             <li> <ion-item class = "item-thumbnail-center" href = '#'><h3>Product Name4</h3></ion-item></li>
 		 </ul>
-            </label>
+	 </form>
         </div>
-          
-    </div>
-        </form>
 <div class="list card">
+    <div class="card corner-ribbon"> New</div>
    <div class="list">
     
         <ion-item class="item-thumbnail-left" href = '#'>
@@ -31,16 +27,19 @@
     <i class="button button-icon ion-flag" >
         Flag
     </i>
+    <i class = "button button-icon ion-eye">View</i>
     </div>
 </div>
-    
+   
    
 </ion-content>
 
 </ion-view>
+
   <div class = "tabs tabs-icon-only">
    <a class = "tab-item">
       <i class = "icon ion-home"></i>
+     
    </a>
 	
    <a class = "tab-item" >
