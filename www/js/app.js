@@ -1,44 +1,53 @@
+// Ionic Starter App
 
-angular.module('TaggerMobile', ['ionic'])
-
+angular.module('starter', ['ionic'])
+.config(function($stateProvider,$urlRouterProvider){
+  $stateProvider
+  .state('login',{
+    url:'/login',
+    templateUrl:'templates/login.html',
+    controller:'LoginCtrl'
+  })
+  
+  .state('signup',{
+    url:'/signup',
+    templateUrl:'templates/signup.html',
+    controller:'SignupCtrl'
+  })
+  .state('dashboard',{
+    url:'/dashboard',
+    templateUrl:'templates/dashboard.html',
+    controller:'DashCtrl'
+  })
+  .state('profile',{
+    url:'/profile',
+    templateUrl:'templates/profile.html',
+    controller:'ProfileCtrl'
+  })
+  .state('update',{
+    url:'/update',
+    templateUrl:'templates/update.html',
+    controller:'UpdateCtrl'
+  })
+  .state('forgetpsswrd',{
+    url:'/forgetpsswrd',
+    templateUrl:'templates/forgetpsswrd.html',
+    controller:'ForgetCtrl'
+  })
+    $urlRouterProvider.otherwise('/login');
+})    
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
-
-    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+    if(window.cordova && window.cordova.plugins.Keyboard) {
+      // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+      // for form inputs)
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-      cordova.plugins.Keyboard.disableScroll(true);
 
+
+      cordova.plugins.Keyboard.disableScroll(true);
     }
-    if (window.StatusBar) {
+    if(window.StatusBar) {
       StatusBar.styleDefault();
     }
   });
 })
-
-.config(function($stateProvider, $urlRouterProvider) {
-
-  $stateProvider
-
-  // setup an abstract state for the tabs directive
-    .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
-  })
-
-  // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
-
-  // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
-
-});

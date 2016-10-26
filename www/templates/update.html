@@ -1,0 +1,39 @@
+<ion-view view-title="Update" class = "background-image2">
+ <ion-content scroll="false" ng-controller="UpdateCtrl">
+    <div> 
+     <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="First Name" {{firstname}} style="color: white;text-align: center; font-size: 14px">
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="Last Name" {{lastname}} style="color: white;text-align: center;font-size: 14px">
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="Contact" {{contact}} style="color: white;text-align: center;font-size: 14px">
+          </label>
+          <label class="item item-input">
+            <input type="email" placeholder="Email" {{email}} style="color: white;text-align: center;font-size: 14px">
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="Username" {{uname}} style="color: white;text-align: center;font-size: 14px">
+          </label>
+          <label class="item item-input">
+            <input type="password" placeholder="Password" {{psswrd}} style="color: white;text-align: center;font-size: 14px">
+          </label>
+          <label class="item item-input">
+            <input type="password" placeholder="Confirm Password" {{confrmpsswrd}} style="color: white;text-align: center;font-size: 14px">
+          </label>
+          <div class="row">
+            <div class="col col text-center">
+                <button class="updatebutton" ng-click="update()" style="font-size: 16px">
+                    Update
+                 </button>
+
+            </div>
+        </div>
+
+    </div>
+        
+  </div>
+ </ion-content>
+</ion-view>

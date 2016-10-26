@@ -1,0 +1,62 @@
+  <ion-view view-title="Login" class = "background-image1">
+   <ion-content scroll="false" ng-controller="LoginCtrl">
+    <div>
+      <div class="logo center">
+        <div id="element"> <center> <img src="../img/logo.png"></center> </div>
+      </div>
+     <form name="myForm" novalidate ng-submit="login()">
+      
+      <div class="list" ng-class="{'has-errors' : myForm.username.$invalid && myForm.username.$dirty, 'has-success':myForm.username.$valid && myForm.username.$dirty}">
+
+          <label class="item item-input">
+            <input type="text" placeholder="Username" ng-model="user.username" ng-minlength="5" name="username" style="color: white;text-align: left; font-size: 16px" required>
+               <div class="padding">
+                 <p ng-show="myForm.username.$error.required" style="color: red"> Username is required</p>
+                 <p ng-show="myForm.username.$error.minlength" style="color: red"> Username must be longer to 5</p>
+               </div>
+          </label>
+      </div>
+      <div class="list" ng-class="{'has-errors' : myForm.password.$invalid && myForm.pass
+      .$dirty, 'has-success':myForm.password.$valid && myForm.password.$dirty}">
+          <label class="item item-input">
+            <input type="password" placeholder="Password" ng-model="user.password" ng-minlength="5" name="password" style="color: white;text-align: left; font-size: 16px" required>
+               <div class="padding">
+                 
+               </div>
+          </label>
+          <div class="padding">
+            <p ng-show="myForm.password.$error.required" style="color: red;align-content: right">Password is required</p>
+            <p ng-show="myForm.password.$error.minlength" style="color: red;align-content: right">Password must be longer than 6 characters</p>
+          </div>
+      </div>
+          <div class="error-container" ng-show="myForm.password.$error" ng-messages="myForm.password.$error">
+              <div ng-messages-include="error-list.html"></div>
+          </div>
+
+    
+      
+      <div class="row">
+          <div class="col text-center">
+            <button class="loginbutton" value="Login" ng-disabled="myForm.$invalid" ng-click="submit(username)" style="font-size: 16px">
+               Login
+            </button>
+            </div></div></form>
+        <div class="row ">
+            <div class="col col text-center">
+                <button class="signupbutton" ng-click="signup()" style="font-size: 16px">
+                    Sign up
+                 </button>
+
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col col text-center">
+                <button class="button button-clear button-light" ng-click="forget()" style="font-size: 18px;color: white ">
+                    Forgot Password?
+                 </button>
+
+            </div>
+        </div>
+      </div>
+   </ion-content>
+  </ion-view>
