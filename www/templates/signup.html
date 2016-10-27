@@ -1,39 +1,31 @@
-<ion-view view-title="Signup" class = "background-image2">
- <ion-content scroll="false" ng-controller="SignupCtrl">
-    <div> 
-     <div class="list">
-          <label class="item item-input">
-            <input type="text" placeholder="First Name" ng-model="firstname" style="color: white;text-align: center; font-size: 14px">
-          </label>
-          <label class="item item-input">
-            <input type="text" placeholder="Last Name" ng-model="lastname" style="color: white;text-align: center;font-size: 14px">
-          </label>
-          <label class="item item-input">
-            <input type="text" placeholder="Contact" ng-model="contact" style="color: white;text-align: center;font-size: 14px">
-          </label>
-          <label class="item item-input">
-            <input type="email" placeholder="Email" ng-model="email" style="color: white;text-align: center;font-size: 14px">
-          </label>
-          <label class="item item-input">
-            <input type="text" placeholder="Username" ng-model="uname" style="color: white;text-align: center;font-size: 14px">
-          </label>
-          <label class="item item-input">
-            <input type="password" placeholder="Password" ng-model="psswrd" style="color: white;text-align: center;font-size: 14px">
-          </label>
-          <label class="item item-input">
-            <input type="password" placeholder="Confirm Password" ng-model="confrmpsswrd" style="color: white;text-align: center;font-size: 14px">
-          </label>
-          <div class="row">
-            <div class="col col text-center">
-                <button class="signupbuttonx" ng-click="signup()" style="font-size: 16px">
-                    Sign up
-                 </button>
-
-            </div>
-        </div>
-
+<ion-view nav-bar-disabled="true" view-title="Signup" class = "login-view">
+  <ion-content scroll="false">
+    <div class="row login-header">
+      <img class="col col-center intro-logo" src="img/logo-transparent.png"/>
     </div>
-        
-  </div>
- </ion-content>
+
+    <div class="row login-body">
+      <div class="list list-inset col col-center col-80 col-offset-10 bg-transparent">
+        <label class="item item-input bg-transparent glass-input">
+          <input type="text" placeholder="Username">
+        </label>
+
+        <label class="item item-input bg-transparent glass-input">
+          <input type="password" placeholder="Password">
+        </label>
+
+        <label class="item item-input bg-transparent glass-input">
+          <input type="password" placeholder="Re-enter password">
+        </label>
+
+        <button class="button button-block button-assertive">
+            SignUp
+        </button>
+
+        <button ng-click="goToLogin()" class="button button-block button-outline button-light">
+            LogIn
+        </button>
+      </div>
+    </div>
+  </ion-content>
 </ion-view>
