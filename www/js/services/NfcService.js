@@ -1,5 +1,5 @@
 angular.module('TaggerMobile')
-.factory('nfcService', function($rootScope, $ionicPlatform){
+.factory('NfcService', function($rootScope, $ionicPlatform){
 	var o = {};
 
 	$ionicPlatform.ready(function(){

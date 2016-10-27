@@ -1,7 +1,4 @@
-angular.module("starter")
+angular.module("TaggerMobile")
 .controller('ProfileCtrl', function($scope, $state) {
-	$scope.ion-compose=function(){
-		$state.go('update');
-	}
-   console.log("switch");   
-})
+
+});

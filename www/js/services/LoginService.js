@@ -1,4 +1,4 @@
-angular.module("starter")
+angular.module("TaggerMobile")
 .service('LoginService', function($http, $q){
 	var baseApiUrl = "http://localhost:3000";
 

@@ -1,5 +1,4 @@
-angular.module("starter")
-
+angular.module("TaggerMobile")
 .controller('SignupCtrl',function($state,$scope){
-	console.log("Switch");
+
 })

@@ -1,6 +1,6 @@
 // Ionic Starter App
 
-angular.module('starter', ['ionic'])
+angular.module('TaggerMobile', ['ionic'])
 .config(function($stateProvider,$urlRouterProvider){
   $stateProvider
   .state('login',{
@@ -8,34 +8,21 @@ angular.module('starter', ['ionic'])
     templateUrl:'templates/login.html',
     controller:'LoginCtrl'
   })
-  
+
   .state('signup',{
     url:'/signup',
     templateUrl:'templates/signup.html',
     controller:'SignupCtrl'
   })
+
   .state('dashboard',{
     url:'/dashboard',
     templateUrl:'templates/dashboard.html',
     controller:'DashCtrl'
   })
-  .state('profile',{
-    url:'/profile',
-    templateUrl:'templates/profile.html',
-    controller:'ProfileCtrl'
-  })
-  .state('update',{
-    url:'/update',
-    templateUrl:'templates/update.html',
-    controller:'UpdateCtrl'
-  })
-  .state('forgetpsswrd',{
-    url:'/forgetpsswrd',
-    templateUrl:'templates/forgetpsswrd.html',
-    controller:'ForgetCtrl'
-  })
-    $urlRouterProvider.otherwise('/login');
-})    
+
+  $urlRouterProvider.otherwise('/login');
+})
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
