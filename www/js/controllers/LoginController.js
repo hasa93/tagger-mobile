@@ -13,7 +13,7 @@ angular.module("TaggerMobile")
 		LoginService.loginUser($scope.user).then(function(response){
 			console.log(response);
 			if(response.profile && response.profile.status == 'OK'){
-				$state.go('dashboard', { profile: response });
+				$state.go('tab.dash', { profile: response });
 			}
 			else{
 				console.log("Invalid login");
