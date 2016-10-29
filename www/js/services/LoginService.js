@@ -1,17 +1,16 @@
 angular.module("TaggerMobile")
-.service('LoginService', function($http, $q){
-	var baseApiUrl = "http://localhost:3000";
+.service('LoginService', function($http, $q, config){
+	var baseApiUrl = config.locals.baseApiUrl;
 
 	var o = {};
 
-	o.loginUser = function(username, passwords){
+	o.loginUser = function(user){
 		var deferred = $q.defer();
 
-		$http.post(baseApiUrl + 'customer/login', {
-			"uname": username,
-			"passwd": passwd
-		}).then(function(profile){
-			deferred.resolve({ status: "SUCCESS", profile: profile });
+		$http.post(baseApiUrl + '/login/customer', user).then(function(response){
+			var userProfile = response.data.profile;
+			deferred.resolve({ profile: userProfile });
+			localStorage.setItem("token", response.data.token);
 		}).catch(function(error){
 			deferred.reject({ status: "ERROR", msg: error });
 		});
