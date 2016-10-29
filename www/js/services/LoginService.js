@@ -18,5 +18,12 @@ angular.module("TaggerMobile")
 		return deferred.promise;
 	}
 
+	o.signUpUser = function(user){
+		var deferred = $q.defer();
+
+		//$http.post(baseApiUrl + 'api/user/create/customer')
+		return deferred.promise;
+	}
+
 	return o;
 })

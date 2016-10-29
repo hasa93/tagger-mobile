@@ -27,3 +27,26 @@ label.glass-input > input{
   height: 47vh;
 }
 /* /Login Styles */
+
+/* Profile Styles */
+.profile-banner{
+	height: 37vh;
+	background-image: url("../img/profilebanner.png");
+	background-size: cover;
+	background-position: 60% 2%
+}
+
+.profile-name{
+	color: white;
+}
+
+.profile-badge{
+	font-size: 1.2em;
+}
+/* /Profile Styles */
+
+/* Dashboard Styles */
+.dash-content{
+	background: #eee;
+}
+/* /Dashboard Styles */

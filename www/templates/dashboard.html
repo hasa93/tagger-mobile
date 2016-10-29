@@ -1,42 +1,95 @@
 <ion-view view-title = "Dashboard">
-    <br>
-<ion-content class = "padding">
-     <div class ="clearable-input content">
+  <ion-content overflow-scroll="true" scrollbar-y="true" class = "padding dash-content">
+     <div class="bar bar-header bar-dark">
+        <h1 class="title"> Dashboard </h1>
+     </div>
+     <br>
+     <div class="list list-inset">
+        <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" placeholder="Search">
+        </label>
+      </div>
 
-       <form class="search  col focus" method="post" action="index.html"  ng-model = "SearchQuery" autofocus autocomplete="on"/ >
-		 <input type ="search" name="q" placeholder="Search" />
-		 <ul class="results" >
-			<li> <ion-item class = "item-thumbnail-center" href = '#'><h3>Product Name1</h3><a href = "#"></a></ion-item></li>
-             <li> <ion-item class = "item-thumbnail-center" href = '#'><h3>Product Name2</h3></ion-item></li>
-             <li> <ion-item class = "item-thumbnail-center" href = '#'><h3>Product Name3</h3></ion-item></li>
-             <li> <ion-item class = "item-thumbnail-center" href = '#'><h3>Product Name4</h3></ion-item></li>
-		 </ul>
-	 </form>
+     <div class="list">
+        <div class="item item-divider">
+          On Watchlist
         </div>
-<div class="list card">
-    <div class="card corner-ribbon"> New</div>
-   <div class="list">
+         <div class="card">
+            <div class="item item-divider"> Product 1 </div>
+            <div class="list">
+              <ion-item class="item-thumbnail-left" href = '#'>
+                <img src = "../img/package.png">
+                <p>Description goes here</p>
+              </ion-item>
 
-        <ion-item class="item-thumbnail-left" href = '#'>
-            <img src = "/img/package.png">
-            <h2>Product Name</h2>
-            <p>Description goes here</p>
+              <i class="button button-icon ion-flag" >
+                  Unflag
+              </i>
+              <i class = "button button-icon ion-eye">View</i>
+            </div>
+        </div>
+        <div class="card">
+            <div class="item item-divider"> Product 2 </div>
+            <div class="list">
+              <ion-item class="item-thumbnail-left" href = '#'>
+                <img src = "../img/package.png">
+                <p>Description goes here</p>
+              </ion-item>
+            </div>
+        </div>
 
-        </ion-item>
+        <div class="item item-divider">
+          Fresh Arrivals
+        </div>
+        <div class="card">
+            <div class="item item-divider"> Product 3 </div>
+            <div class="list">
+              <ion-item class="item-thumbnail-left" href = '#'>
+                <img src = "../img/gift.png">
+                <p>Description goes here</p>
+              </ion-item>
 
-    <i class="button button-icon ion-flag" >
-        Flag
-    </i>
-    <i class = "button button-icon ion-eye">View</i>
-    </div>
-</div>
+              <i class="button button-icon ion-flag" >
+                  Unflag
+              </i>
+              <i class = "button button-icon ion-eye">View</i>
+            </div>
+        </div>
+        <div class="card">
+            <div class="item item-divider"> Product 4 </div>
+            <div class="list">
+              <ion-item class="item-thumbnail-left" href = '#'>
+                <img src = "../img/gift.png">
+                <p>Description goes here</p>
+              </ion-item>
 
+              <i class="button button-icon ion-flag" >
+                  Unflag
+              </i>
+              <i class = "button button-icon ion-eye">View</i>
+            </div>
+        </div>
+        <div class="card">
+            <div class="item item-divider"> Product 5 </div>
+            <div class="list">
+              <ion-item class="item-thumbnail-left" href = '#'>
+                <img src = "../img/gift.png">
+                <p>Description goes here</p>
+              </ion-item>
 
-</ion-content>
+              <i class="button button-icon ion-flag" >
+                  Unflag
+              </i>
+              <i class = "button button-icon ion-eye">View</i>
+            </div>
+        </div>
+     </div>
 
+    </ion-content>
 </ion-view>
 
-  <div class = "tabs tabs-icon-only">
+<!--   <div class = "tabs tabs-icon-only">
    <a class = "tab-item">
       <i class = "icon ion-home"></i>
 
@@ -49,4 +102,4 @@
    <a class = "tab-item">
       <i class = "icon ion-person"></i>
    </a>
-</div>
+</div> -->
