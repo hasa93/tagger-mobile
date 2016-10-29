@@ -18,10 +18,19 @@ angular.module('TaggerMobile', ['ionic'])
     controller:'SignupCtrl'
   })
 
-  .state('dashboard',{
-    url:'/dashboard',
-    templateUrl:'templates/dashboard.html',
-    controller:'DashCtrl'
+  .state('tab', {
+      url: '/tab',
+      abstract: true,
+      templateUrl: 'templates/tabs.html'
+  })
+
+  .state('tab.dash',{
+    url:'/dash',
+    views:{
+      'tab-dash': {
+        templateUrl: 'templates/dashboard.html'
+      }
+    }        
   })
 
   $urlRouterProvider.otherwise('/login');
