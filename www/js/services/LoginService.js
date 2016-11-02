@@ -21,7 +21,16 @@ angular.module("TaggerMobile")
 	o.signUpUser = function(user){
 		var deferred = $q.defer();
 
-		//$http.post(baseApiUrl + 'api/user/create/customer')
+		$http.post(baseApiUrl + '/user/create/customer', user).then(function(response){
+			if(response.data.status	=== "ERROR"){
+				deferred.resolve({ status: "ERROR" });
+			}
+			else{
+				deferred.resolve({ status: "SUCCESS" });
+			}
+		}, function(error){
+			deferred.reject({ status: "ERROR" });
+		});
 		return deferred.promise;
 	}
 

@@ -7,15 +7,15 @@
     <div class="row login-body">
       <div class="list list-inset col col-center col-80 col-offset-10 bg-transparent">
         <label class="item item-input bg-transparent glass-input">
-          <input type="text" placeholder="Username">
+          <input ng-model="user.uname" type="text" placeholder="Username">
         </label>
 
         <label class="item item-input bg-transparent glass-input">
-          <input type="password" placeholder="Password">
+          <input ng-model="user.passwd" type="password" placeholder="Password">
         </label>
 
         <label class="item item-input bg-transparent glass-input">
-          <input type="password" placeholder="Re-enter password">
+          <input ng-model="user.repasswd" type="password" placeholder="Re-enter password">
         </label>
 
         <button ng-click="signup()" class="button button-block button-assertive">
