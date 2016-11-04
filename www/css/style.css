@@ -33,15 +33,24 @@ label.glass-input > input{
 	height: 37vh;
 	background-image: url("../img/profilebanner.png");
 	background-size: cover;
-	background-position: 60% 2%
+	background-position: 60% 2%;
+  margin-top: 10%;
 }
 
 .profile-name{
-	color: white;
+	color: black;
 }
 
 .profile-badge{
 	font-size: 1.2em;
+}
+.profile-pic{
+  display: inline-block;
+  border-radius: 100%;
+  width: 20vh;
+  height: 20vh;
+  margin-top: 18%;
+  margin-right: 3%;
 }
 /* /Profile Styles */
 

@@ -44,7 +44,7 @@ angular.module('TaggerMobile', ['ionic'])
     }
   });
 
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('tab/profile');
 })
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
