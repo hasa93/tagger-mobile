@@ -31,14 +31,15 @@ label.glass-input > input{
 /* Profile Styles */
 .profile-banner{
 	height: 37vh;
-	background-image: url("../img/profilebanner.png");
+	background-color:#0C0432;
 	background-size: cover;
 	background-position: 60% 2%;
-  margin-top: 10%;
+  color:white;
 }
 
 .profile-name{
-	color: black;
+	color: white;
+  text-align: left;
 }
 
 .profile-badge{
@@ -52,6 +53,7 @@ label.glass-input > input{
   margin-top: 18%;
   margin-right: 3%;
 }
+
 /* /Profile Styles */
 
 /* Dashboard Styles */

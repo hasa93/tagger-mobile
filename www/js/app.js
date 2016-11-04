@@ -35,13 +35,10 @@ angular.module('TaggerMobile', ['ionic'])
     }
   })
 
-  .state('tab.profile', {
+  .state('profile', {
     url: '/profile',
-    views: {
-      'tab-profile': {
-        templateUrl:'templates/profile.html'
-      }
-    }
+    templateUrl:'templates/profile.html',
+    controller:'ProfileCtrl'
   });
 
   $urlRouterProvider.otherwise('tab/profile');

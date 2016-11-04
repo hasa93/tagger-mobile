@@ -1,11 +1,11 @@
 <ion-nav-view view-title="Profile">
 	<ion-view>
 		<div class="row profile-banner">
-			<ion-icon>ion-person</ion-icon>
-			<h1 class="profile-name"> Alan Menkin </h1>
+			<ion-icon></ion-icon>
+			<h1 class="profile-name">Alan Menkin </h1>
 			<img class="profile-pic" src="../img/profile.jpg"/>
 		</div>
-		<div class="menu-wrapper">
+		<div class="list">
       		<ul class="list">
         		<li  class="item ion-android-person"> Me</li>
         		 	<label class="item item-input">
@@ -21,6 +21,15 @@
  					</label>
       		</ul>
     	</div>
-    	<button class="button button-outline button-positive" ng-click="next()">Next</button>
+    	<div class="row">
+    	    <div class="col text-left">
+    			<button class="button button-outline button-positive" ng-click="skip()">Skip</button>
+    		</div>
+    		<div class="col text-right">
+    			<button class="button button-outline button-positive" ng-click="next()">Next</button>
+    		</div>
+    		
+    	</div>
+    	
 	</ion-view>
 </ion-nav-view>
