@@ -33,26 +33,29 @@ label.glass-input > input{
 	height: 37vh;
 	background-color:#0C0432;
 	background-size: cover;
-	background-position: 60% 2%;
-  color:white;
 }
 
 .profile-name{
+  display: inline-block;
 	color: white;
-  text-align: left;
+  font-size: 1.3em; 
+}
+.profile-destination{
+  color: red;
+  font-size: 1.0em; 
 }
 
 .profile-badge{
-	font-size: 1.2em;
+	font-size: 0.8em;
 }
 .profile-pic{
   display: inline-block;
   border-radius: 100%;
   width: 20vh;
   height: 20vh;
-  margin-top: 18%;
-  margin-right: 3%;
+  margin-left: 78%;
 }
+
 
 /* /Profile Styles */
 
