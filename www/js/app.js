@@ -39,9 +39,14 @@ angular.module('TaggerMobile', ['ionic'])
     url: '/profile',
     templateUrl:'templates/profile.html',
     controller:'ProfileCtrl'
+  })
+   .state('edit-details', {
+    url: '/edit',
+    templateUrl:'templates/edit-details.html',
+    controller:'EditCtrl'
   });
 
-  $urlRouterProvider.otherwise('tab/profile');
+  $urlRouterProvider.otherwise('tab/dash');
 })
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
