@@ -46,7 +46,7 @@ angular.module('TaggerMobile', ['ionic'])
     controller:'EditCtrl'
   });
 
-  $urlRouterProvider.otherwise('tab/dash');
+  $urlRouterProvider.otherwise('edit');
 })
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
