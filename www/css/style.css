@@ -36,9 +36,10 @@ label.glass-input > input{
 }
 
 .profile-name{
-  display: inline-block;
+  /*display: inline-block;*/
 	color: white;
   font-size: 1.3em; 
+  text-align:left;
 }
 .profile-destination{
   color: red;

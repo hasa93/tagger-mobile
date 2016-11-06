@@ -20,6 +20,12 @@ angular.module('TaggerMobile', ['ionic'])
     controller:'SignupCtrl'
   })
 
+  .state('search-view',{
+    url:'/search-view',
+    templateUrl:'templates/search-view.html',
+    controller:'SearchCtrl'
+  })
+
   .state('tab', {
       url: '/tab',
       abstract: true,
@@ -46,7 +52,7 @@ angular.module('TaggerMobile', ['ionic'])
     controller:'EditCtrl'
   });
 
-  $urlRouterProvider.otherwise('edit');
+  $urlRouterProvider.otherwise('search-view');
 })
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
