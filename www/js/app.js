@@ -52,7 +52,7 @@ angular.module('TaggerMobile', ['ionic'])
     controller:'EditCtrl'
   });
 
-  $urlRouterProvider.otherwise('search-view');
+  $urlRouterProvider.otherwise('profile');
 })
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

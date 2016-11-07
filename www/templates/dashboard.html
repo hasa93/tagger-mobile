@@ -1,56 +1,56 @@
 <ion-view view-title = "Dashboard">
 <br>
-<ion-nav-bar class="bar-dark"></ion-nav-bar>
- <ion-nav-buttons side="secondary">
-    <button class="button button-icon icon ion-ios-search-strong" ng-click="goTosearch()">
-    </button>
-  </ion-nav-buttons>
 
   <ion-content  overflow-scroll="true" scrollbar-y="true" class = "padding-top padding dash-content">
-   
      <div class="list">
+       <div class="list list-inset" style="overflow-y: auto;">
+          <label class="item item-input">
+              <i class="icon ion-search placeholder-icon"></i>
+              <input type="text" placeholder="Search">
+          </label>
+      </div>
       <div class="item item-divider item-assertive text-center ">  
           <h2 style="color:white">NFC Disabaled</h2>
-          <button class="button button-block button-assertive" ng-click="gonext()">fuck
-    </button>
       </div>
      </div>
 
-       <div class="item item-divider item-balanced  ">  
-          <div class="card">
-          <ion-item class = "item-thumbnail-left" href = "#">
-            <img src = "../img/package.png">
-
-            <h3 class="text-center">Product Name </h3>
-            <p class="text-center">Description goes here</p>
-           
-            
-
-            </div>
-          </ion-item>
-
+      <div class="item item-divider found">  
+          <div class="card found">
+            <ion-item class = "item-thumbnail-left" href = "#">
+              <img src = "../img/package.png">
+              <h3 class="text-center">Product Name </h3>
+              <p class="text-center">Description goes here</p>
           </div>
+          </ion-item>
       </div>
+    
      <div class="item item-divider">
           On Watchlist
         </div>
-          <ion-fab top right edge>
-    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
-    </ion-fab>
+
             
          <div class="card">
             <div class="item item-divider"> Product 1 </div>
             <div class="list">
               <ion-item class="item-thumbnail-left" href = '#'>
                 <img src = "../img/package.png">
-                <p>Description goes here</p>
+                <p class="main">Description goes hereasl lkfjlskjlk
+                sodklgxdlkgmxlfmblxkmb lkmdlrkx xd
+                 rx;kbxfmbxdm;smr;bkcmlxd
+                 mdklbxlkm z
+                 l hm
+                 mx;kfmblfkmh xtk
+                  zhm
+                  rkg;lzgk
+                  ;kg;ldx gxlkfg;lzgzmdfgk
+                  dgxdflmkzre 
+                  jtpoi5ejh
+                  ozpzjrpzojkrze gozk[
+                  gklzfdmbz;dlg
+                  </p>
               </ion-item>
-
-             
-              <div class="text-center">
-              <div class=" col button  ion-flag button-assertive">
-              Unflag
-              </div>
+              <div class="fab button padding unflaged">
+                    <i class="icon ion ion-flag"></i>
               </div>
             </div>
         </div>
@@ -61,9 +61,9 @@
                 <img src = "../img/package.png">
                 <p>Description goes here</p>
               </ion-item>
-                <i class="button button-icon ion-flag" >
-                  Unflag
-              </i>
+               <div class="fab button padding unflaged">
+                    <i class="icon ion ion-flag"></i>
+               </div>
             </div>
         </div>
 
@@ -77,11 +77,9 @@
                 <img src = "../img/gift.png">
                 <p>Description goes here</p>
               </ion-item>
-
-              <i class="button button-icon ion-flag" >
-                  Unflag
-              </i>
-              <i class = "button button-icon ion-eye">View</i>
+                  <div class="fab button padding unflaged">
+                    <i class="icon ion ion-flag"></i>
+                  </div>
             </div>
         </div>
         <div class="card">
@@ -91,10 +89,9 @@
                 <img src = "../img/gift.png">
                 <p>Description goes here</p>
               </ion-item>
-
-              <i class="button button-icon ion-flag" >
-                  Unflag
-              </i>
+                  <div class="fab button padding flaged">
+                    <i class="icon ion ion-flag"></i>
+                  </div>
              
             </div>
         </div>
@@ -106,9 +103,9 @@
                 <p>Description goes here</p>
               </ion-item>
 
-              <i class="button button-icon ion-flag" >
-                  Unflag
-              </i>
+                  <div class="fab button padding flaged">
+                    <i class="icon ion ion-flag"></i>
+                  </div>
              
             </div>
         </div>

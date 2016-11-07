@@ -30,16 +30,15 @@ label.glass-input > input{
 
 /* Profile Styles */
 .profile-banner{
-	height: 37vh;
-	background-color:#0C0432;
-	background-size: cover;
+  height: 37vh;
+  background-color:#0C0432;
+  background-size: cover;
 }
 
 .profile-name{
-  /*display: inline-block;*/
-	color: white;
+  display: inline-block;
+  color: white;
   font-size: 1.3em; 
-  text-align:left;
 }
 .profile-destination{
   color: red;
@@ -47,14 +46,13 @@ label.glass-input > input{
 }
 
 .profile-badge{
-	font-size: 0.8em;
+  font-size: 0.8em;
 }
 .profile-pic{
   display: inline-block;
   border-radius: 100%;
   width: 20vh;
   height: 20vh;
-  margin-left: 78%;
 }
 
 
@@ -62,6 +60,54 @@ label.glass-input > input{
 
 /* Dashboard Styles */
 .dash-content{
-	background: #eee;
+  background: #ecf0f1;
 }
 /* /Dashboard Styles */
+
+/*Dark Theme */
+.found{
+  background: #2ecc71;
+}
+.disable{
+  background: #e74c3c;
+}
+/*fab design*/
+.fab {
+    
+    position: relative;
+    bottom: 20px;
+    left:90%;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    border: none;
+    z-index: 20;
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+    -webkit-transition-property: -webkit-transform, box-shadow;
+    transition-property: transform, box-shadow;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.fab.activated {
+    opacity: 0.9;
+    -webkit-transform: translate3d(0, -1px, 0);
+    transform: translate3d(0, -1px, 0);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+.fab .icon {
+    font-size: 24px;
+    color: #ffffff;
+}
+.flaged{
+ background:  rgb(63, 81, 181);
+}
+.unflaged{
+background:  #7f8c8d;
+}
