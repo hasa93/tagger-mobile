@@ -52,7 +52,7 @@ angular.module('TaggerMobile', ['ionic'])
     controller:'EditCtrl'
   });
 
-  $urlRouterProvider.otherwise('profile');
+  $urlRouterProvider.otherwise('tab/dash');
 })
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {

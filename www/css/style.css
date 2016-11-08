@@ -74,9 +74,9 @@ label.glass-input > input{
 /*fab design*/
 .fab {
     
-    position: relative;
-    bottom: 20px;
-    left:90%;
+    position: absolute;
+    bottom: 0%;
+    left:80%;
     border-radius: 50%;
     -webkit-appearance: none;
     box-sizing: border-box;
@@ -110,4 +110,12 @@ label.glass-input > input{
 }
 .unflaged{
 background:  #7f8c8d;
+}
+
+/*Horizontal Scrolling */
+.scroll-horiz {
+  width: 200%;
+    height: 200px;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
 }
