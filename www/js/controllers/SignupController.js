@@ -15,14 +15,9 @@ angular.module("TaggerMobile")
 				title: "Password Mismatch",
 				template: "Password re-type doesn't match"
 			});
-			return
+			return;
 		}
-
-		LoginService.signUpUser($scope.user).then(function(response){
-			console.log(response);
-			$state.go('login');
-		}, function(error){
-			console.log(error);
-		});
+		LoginService.user = $scope.user;
+		$state.go('profile');
 	}
 })

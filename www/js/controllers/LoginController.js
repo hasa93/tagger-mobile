@@ -10,9 +10,11 @@ angular.module("TaggerMobile")
 	}
 
 	$scope.login = function(){
-		LoginService.loginUser($scope.user).then(function(response){
-			console.log(response);
+		LoginService.user = $scope.user;
+
+		LoginService.loginUser().then(function(response){
 			if(response.profile && response.profile.status == 'OK'){
+				console.log($state);
 				$state.go('tab.dash', { profile: response });
 			}
 			else{
@@ -20,7 +22,7 @@ angular.module("TaggerMobile")
 				$ionicPopup.alert({
 					title: 'Invalid Login',
 					template: 'Please check your username and password'
-				})
+				});
 			}
 		});
 	}
