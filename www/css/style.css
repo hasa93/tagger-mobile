@@ -35,6 +35,12 @@ label.glass-input > input{
   background-size: cover;
 }
 
+.profile-banner-small{
+  height: 15vh;
+  background-color:#0C0432;
+  background-size: cover;
+}
+
 .profile-name{
   display: inline-block;
   color: white;
@@ -48,11 +54,19 @@ label.glass-input > input{
 .profile-badge{
   font-size: 0.8em;
 }
+
 .profile-pic{
   display: inline-block;
   border-radius: 100%;
   width: 20vh;
   height: 20vh;
+}
+
+.profile-pic-small{
+  display: inline-block;
+  border-radius: 100%;
+  width: 10vh;
+  height: 10vh;
 }
 
 

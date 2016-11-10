@@ -3,36 +3,40 @@
   <!-- Left menu -->
   <ion-side-menu side="left">
    <ion-content>
+   <div class="profile-banner-small">
    <div class="col col-top text-center">
-   <img class="profile-pic" src="../img/profile.jpg" />
-    </div>
+   <img class="profile-pic-small" src="../img/profile.jpg" />
+   </div>
+   </div>
     <ion-list>
-        <ion-item>
-          <label>Cloths</label>
-        </ion-item>
-        <div class="item">
+        <div class="item item-divider">
             Advanced Search
+        </div>
+          <ion-checkbox ng-model="clothChecked" value = "cloths">Cloths</ion-checkbox>
+          <ion-checkbox ng-model="accessoriesChecked" value = "Baby Accessories">Baby Accessories</ion-checkbox>
+          <ion-checkbox ng-model="safetyisChecked" value = "Safety">Safety</ion-checkbox>
+          <ion-checkbox ng-model="skinisChecked" value = "Safety">Baby Skin Care </ion-checkbox>
+          <ion-checkbox ng-model="toyisChecked" value = "Safety">Infant Toys</ion-checkbox>
             <div class="row">
-              <h3>Gender</h3>
+              <lable>Gender</label>
              </div>
-            <div row>
+            <div class = "row text-center">
               <input type="radio" name="gender"><label>Female</label>
               <input type="radio" name="gender"><label>Male</label>
             </div>
-        </div>
         <ion-item menu-close href="#/tab/profile">
           <i class= "icon ion-hammer"> Edit Profile</i>
       </ion-list>
     </ion-content>
   </ion-side-menu>
-  
+
   <ion-side-menu-content>
   <ion-nav-bar class = "bar bar-positive">
     <ion-nav-buttons>
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
      <ion-nav-buttons side="secondary">
-    <button class="button button-icon icon ion-ios-search-strong" ng-click="goTosearch()"></button>
+    <button class="button button-icon icon ion-ios-search-strong" ng-click="gotoSearchView()"></button>
     </ion-nav-buttons>
 
   </ion-nav-bar>
@@ -41,11 +45,6 @@
      
      <div class="list">
        <div class="list list-inset" style="overflow-y: auto;">
-          <label class="item item-input">
-              <i class="icon ion-search placeholder-icon"></i>
-              <input type="text" placeholder="Search">
-          </label>
-      </div>
       <div class="item item-divider item-assertive text-center ">  
           <h2 style="color:white">NFC Disabaled</h2>
       </div>
