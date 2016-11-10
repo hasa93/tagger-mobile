@@ -36,23 +36,18 @@ angular.module('TaggerMobile', ['ionic'])
     url:'/dash',
     views:{
       'tab-dash': {
-        templateUrl: 'templates/dashboard.html'
+        templateUrl: 'templates/dashboard.html',
+        controller: 'DashCtrl'
       }
     }
   })
-
   .state('profile', {
     url: '/profile',
     templateUrl:'templates/profile.html',
     controller:'ProfileCtrl'
   })
-   .state('edit-details', {
-    url: '/edit',
-    templateUrl:'templates/edit-details.html',
-    controller:'EditCtrl'
-  });
 
-  $urlRouterProvider.otherwise('tab/dash');
+  $urlRouterProvider.otherwise('/login');
 })
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
