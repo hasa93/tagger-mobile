@@ -88,9 +88,9 @@ label.glass-input > input{
 /*fab design*/
 .fab {
     
-    position: absolute;
+    position: relative;
     bottom: 10%;
-    left:60%;
+    left:80%;
     border-radius: 50%;
     -webkit-appearance: none;
     box-sizing: border-box;

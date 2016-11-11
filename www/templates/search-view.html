@@ -1,10 +1,9 @@
 <ion-view>
 
   <ion-nav-bar class = "bar bar-positive">
+              <ion-nav-back-button>
+            </ion-nav-back-button>
   <ion-nav-title ng-hide = "true">f</ion-nav-title>
-    <ion-nav-buttons>
-    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-    </ion-nav-buttons>
      <ion-nav-buttons side="secondary">
               <label class="item item-input">
               <i class="icon ion-search placeholder-icon"></i>
@@ -20,7 +19,7 @@
      <div class="list card">
 
      <div class="item item-avatar">
-        <img src="../img/package.png">
+        <img src="img/package.png">
         <h2>Product Name</h2>
         <p>Company Name or something </p>
      </div>
@@ -43,11 +42,9 @@
         
   
   </div>
-
-  <a class="item item-icon-left assertive" href="#">
-    <i class="icon ion-flag"></i>
-    Flag
-  </a>
+  <div class="fab button padding unflaged">
+      <i class="icon ion ion-flag"></i>
+  </div>
 
 </div>
      </div>

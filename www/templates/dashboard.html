@@ -5,7 +5,7 @@
    <ion-content>
    <div class="profile-banner-small">
    <div class="col col-top text-center">
-   <img class="profile-pic-small" src="../img/profile.jpg" />
+   <img class="profile-pic-small" src="img/profile.jpg" />
    </div>
    </div>
     <ion-list>
@@ -24,7 +24,7 @@
               <input type="radio" name="gender"><label>Female</label>
               <input type="radio" name="gender"><label>Male</label>
             </div>
-        <ion-item menu-close href="#/tab/profile">
+        <ion-item menu-close href="#/profile">
           <i class= "icon ion-hammer"> Edit Profile</i>
       </ion-list>
     </ion-content>
@@ -35,17 +35,15 @@
     <ion-nav-buttons>
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
-     <ion-nav-buttons side="secondary">
-    <button class="button button-icon icon ion-ios-search-strong" ng-click="gotoSearchView()"></button>
+     <ion-nav-buttons side="secondary" >
+    <button  class="button button-icon icon ion-ios-search-strong" ng-click = gotoSearchView()></button>
     </ion-nav-buttons>
-
   </ion-nav-bar>
     <ion-view view-title = "Dashboard">
-  <ion-content  overflow-scroll="true" scrollbar-y="true" class = "padding-top padding dash-content">
+  <ion-content  overflow-scroll="true" scrollbar-y="true" class = " has-header padding-top padding dash-content">
      
      <div class="list">
-       <div class="list list-inset" style="overflow-y: auto;">
-      <div class="item item-divider item-assertive text-center ">  
+      <div class="item item-divider item-assertive text-center">  
           <h2 style="color:white">NFC Disabaled</h2>
       </div>
      </div>
@@ -53,7 +51,7 @@
       <div class="item item-divider found">  
           <div class="card found">
             <ion-item class = "item-thumbnail-left" href = "#">
-              <img src = "../img/package.png">
+              <img src = "img/package.png">
               <h3 class="text-center">Product Name </h3>
               <p class="text-center">Description goes here</p>
           </div>
@@ -69,62 +67,27 @@
             <div class="item item-divider"> Product 1 </div>
             <div class="list">
               <ion-item class="item-thumbnail-left" href = '#'>
-                <img src = "../img/package.png">
-                <p class="main">Description goes hereasl lkfjlskjlk
-                sodklgxdlkgmxlfmblxkmb lkmdlrkx xd
-                 rx;kbxfmbxdm;smr;bkcmlxd
-                 mdklbxlkm z
-                 l hm
-                 mx;kfmblfkmh xtk
-                  zhm
-                  rkg;lzgk
-                  ;kg;ldx gxlkfg;lzgzmdfgk
-                  dgxdflmkzre 
-                  jtpoi5ejh
-                  ozpzjrpzojkrze gozk[
-                  gklzfdmbz;dlg
-                  </p>
+                <img src = "img/package.png">
+                <p class="main">Description goes here</p>
               </ion-item>
-              <div class="fab button padding unflaged">
-                    <i class="icon ion ion-flag"></i>
-              </div>
             </div>
         </div>
         <div class="card col col-20">
             <div class="item item-divider"> Product 2 </div>
             <div class="list">
               <ion-item class="item-thumbnail-left" href = '#'>
-                <img src = "../img/package.png">
+                <img src = "img/package.png">
                 <p>Description goes here</p>
               </ion-item>
-               <div class="fab button padding unflaged">
-                    <i class="icon ion ion-flag"></i>
-               </div>
             </div>
         </div>
          <div class="card col col-20">
             <div class="item item-divider"> Product 3 </div>
             <div class="list">
               <ion-item class="item-thumbnail-left" href = '#'>
-                <img src = "../img/package.png">
-                <p class="main">Description goes hereasl lkfjlskjlk
-                sodklgxdlkgmxlfmblxkmb lkmdlrkx xd
-                 rx;kbxfmbxdm;smr;bkcmlxd
-                 mdklbxlkm z
-                 l hm
-                 mx;kfmblfkmh xtk
-                  zhm
-                  rkg;lzgk
-                  ;kg;ldx gxlkfg;lzgzmdfgk
-                  dgxdflmkzre 
-                  jtpoi5ejh
-                  ozpzjrpzojkrze gozk[
-                  gklzfdmbz;dlg
-                  </p>
+                <img src = "img/package.png">
+                <p class="main">Description goes here</p>
               </ion-item>
-              <div class="fab button padding unflaged">
-                    <i class="icon ion ion-flag"></i>
-              </div>
             </div>
         </div>        
         </div>
@@ -138,24 +101,18 @@
             <div class="item item-divider"> Product 3 </div>
             <div class="list">
               <ion-item class="item-thumbnail-left" href = '#'>
-                <img src = "../img/gift.png">
+                <img src = "img/gift.png">
                 <p>Description goes here</p>
               </ion-item>
-                  <div class="fab button padding unflaged">
-                    <i class="icon ion ion-flag"></i>
-                  </div>
             </div>
         </div>
         <div class="card">
             <div class="item item-divider"> Product 4 </div>
             <div class="list">
               <ion-item class="item-thumbnail-left" href = '#'>
-                <img src = "../img/gift.png">
+                <img src = "img/gift.png">
                 <p>Description goes here</p>
               </ion-item>
-                  <div class="fab button padding flaged">
-                    <i class="icon ion ion-flag"></i>
-                  </div>
              
             </div>
         </div>
@@ -163,13 +120,10 @@
             <div class="item item-divider"> Product 5 </div>
             <div class="list">
               <ion-item class="item-thumbnail-left" href = '#'>
-                <img src = "../img/gift.png">
+                <img src = "img/gift.png">
                 <p>Description goes here</p>
               </ion-item>
-              </ion-scroll>
-                  <div class="fab button padding flaged">
-                    <i class="icon ion ion-flag"></i>
-                  </div>             
+              </ion-scroll>>             
             </div>
         </div>
      </div>
