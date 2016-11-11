@@ -47,7 +47,7 @@ angular.module('TaggerMobile', ['ionic'])
     controller:'ProfileCtrl'
   })
 
-  $urlRouterProvider.otherwise('tab/dash');
+  $urlRouterProvider.otherwise('/login');
 })
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
