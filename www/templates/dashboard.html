@@ -37,7 +37,7 @@
   </ion-side-menu>
 
   <ion-side-menu-content>
-      <ion-nav-bar class = "bar bar-positive">
+      <ion-nav-bar class = "bar bar-dark">
           <ion-nav-buttons>
               <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
           </ion-nav-buttons>
@@ -48,53 +48,44 @@
       </ion-nav-bar>
 
       <ion-view view-title = "Dashboard">
-          <ion-content  overflow-scroll="true" scrollbar-y="true" class = " has-header padding-top padding dash-content">
-
-            <div class="list">
-                <div class="item item-divider text-center nfc-disable">
-                    <h2 class = "text-white">NFC Disabale</h2>
-                </div>
-            </div>
-            <div class="list">
-              <div class = "item-divider item nfc-enable text-center">
-              <h2 class="text-white">NFC Enable </h2>
-            </div>
-
-
-            <div class="item item-divider">
+          <ion-content  overflow-scroll="true" scrollbar-y="true" class = " has-header">
+            <div class="item item-divider text-center">
               On Watchlist
             </div>
-
             <ion-scroll direction = "x">
                 <div class = "row scroll-horiz">
                   <div class="card col col-20">
-                    <div class="item item-divider"> Product 1 </div>
-                    <div class="list">
-                      <ion-item class="item-thumbnail-left" href = '#'>
-                        <img src = "img/package.png">
-                        <p class="main">Description goes here</p>
-                      </ion-item>
+                    <h5 class="product-head-text text-center"> Product Name</h5>
+                    <div class="item item-body">
+                        <img class="full-image" src="img/package.png">
+                    </div>
+                    <div class="item item-divider"> Price
+                    </div>
+                  </div>
+                  <div class="card col col-20">
+                    <h5 class="product-head-text text-center"> Product Name</h5>
+                    <div class="item item-body">
+                        <img class="full-image" src="img/package.png">
+                    </div>
+                    <div class="item item-divider"> Price
                     </div>
                   </div>
                 </div>
             </ion-scroll>
 
-            <div class="item item-divider">
+            <div class="item item-divider text-center">
               Fresh Arrivals
             </div>
 
             <ion-scroll direction = "x">
               <div class = "row scroll-horiz">
-                <div class="card">
-                    <div class="item item-divider"> Product 3 </div>
-                    <div class="list">
-                      <ion-item class="item-thumbnail-left" href = '#'>
-                        <img src = "img/gift.png">
-                        <p>Description goes here</p>
-                      </ion-item>
+                <div class="card col col-20">
+                    <h5 class="product-head-text text-center"> Product Name</h5>
+                    <div class="item item-body">
+                        <img class="full-image" src = "img/gift.png">
                     </div>
                 </div>
-              </div>
+                </div>
             </ion-scroll>
         </ion-content>
       </ion-view>

@@ -163,6 +163,10 @@ background:  #7f8c8d;
 
 /* Text styles */
 .text-white{
-  color: "white";
+  color:white;
 }
 
+/*product styles */
+.product-head-text{
+  color:#3498db;
+}
