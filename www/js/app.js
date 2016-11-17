@@ -27,10 +27,9 @@ angular.module('TaggerMobile', ['ionic'])
   })
 
   .state('dash',{
-        url:'/dash',
-        templateUrl: 'templates/dashboard.html',
-        controller: 'DashCtrl',
-    }
+    url:'/dash',
+    templateUrl:'templates/dashboard.html',
+    controller:'DashCtrl'
   })
   .state('profile', {
     url: '/profile',
