@@ -31,7 +31,7 @@ label.glass-input > input{
 /* Profile Styles */
 .profile-banner{
   height: 37vh;
-  background-color:#0C0432;
+  background-color:#7f8c8d;
   background-size: cover;
 }
 
@@ -60,6 +60,8 @@ label.glass-input > input{
   border-radius: 100%;
   width: 20vh;
   height: 20vh;
+  border:5px solid #eee;
+  box-shadow: 0 3px 2px rgba(0,0,0,0.3);
 }
 
 .profile-pic-small{
@@ -147,3 +149,20 @@ background:  #7f8c8d;
 .list .item.item-accordion.ng-hide-remove {
   display: block !important;
 }
+
+
+/* NFC Styles */
+.nfc-enable{
+  background-color: #2ecc71;
+
+}
+
+.nfc-disable{
+  background-color: #e74c3c;
+}
+
+/* Text styles */
+.text-white{
+  color: "white";
+}
+

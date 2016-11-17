@@ -26,19 +26,10 @@ angular.module('TaggerMobile', ['ionic'])
     controller:'SearchCtrl'
   })
 
-  .state('tab', {
-      url: '/tab',
-      abstract: true,
-      templateUrl: 'templates/tabs.html'
-  })
-
-  .state('tab.dash',{
-    url:'/dash',
-    views:{
-      'tab-dash': {
+  .state('dash',{
+        url:'/dash',
         templateUrl: 'templates/dashboard.html',
-        controller: 'DashCtrl'
-      }
+        controller: 'DashCtrl',
     }
   })
   .state('profile', {
