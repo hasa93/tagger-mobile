@@ -16,7 +16,7 @@ angular.module("TaggerMobile")
 		LoginService.user.contact = $scope.profile.contact;
 
 		LoginService.signUpUser().then(function(response){
-			$state.go('tab.dash');
+			$state.go('dash');
 			console.log(response);
 		});
 	}
