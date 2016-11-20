@@ -23,7 +23,10 @@ angular.module('TaggerMobile', ['ionic'])
   .state('search-view',{
     url:'/search-view',
     templateUrl:'templates/search-view.html',
-    controller:'SearchCtrl'
+    controller:'SearchCtrl',
+    params: {
+      details:{}
+    }
   })
 
   .state('dash',{

@@ -1,9 +1,8 @@
 <ion-view>
-
   <ion-nav-bar class = "bar bar-dark">
-              <ion-nav-back-button>
-            </ion-nav-back-button>
-  <ion-nav-title ng-hide = "true">f</ion-nav-title>
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+  <ion-nav-title ng-hide = "true"></ion-nav-title>
      <ion-nav-buttons side="secondary">
               <label class="item item-input">
               <i class="icon ion-search placeholder-icon"></i>
@@ -14,34 +13,29 @@
     </ion-nav-buttons>
 
   </ion-nav-bar>
+
   <ion-content  overflow-scroll="true" scrollbar-y="true" class = "padding-top padding dash-content">
      <div class="list">
      <div class="list card">
 
      <div class="item item-avatar">
         <img src="img/package.png">
-        <h2>Product Name</h2>
-        <p>Company Name or something </p>
+        <h2> {{ productDetails.prodName }} </h2>
+        <p> Rs. {{ productDetails.price.toFixed(2) }} </p>
      </div>
 
   <div class="item item-text-wrap">
   <div class="list list-inset">
     <div class="item">
-    <h3>Age Range</h3><h4>Product Age Range</h4>
+    <h3>Age Range</h3><h4>{{ productDetails.ageRange }}</h4>
     </div>
-        <div class="item">
-    <h3>Gender</h3><h4>Male</h4>
+
+    <div class="item">
+      <h3> Product Description </h3>
+      <p ng-if="productDetails.description == undefined">No description available yet<p>
     </div>
-        <div class="item">
-    <h3>Instructions</h3>
-     <p>Product Details bla bla bla bla bla bla bla<p>
-    </div>
-        <div class="item">
-    <h3>Other Details</h3><h4>Details bla bla</h4>
-    </div>
-        
-  
   </div>
+
   <div class="fab button padding unflaged">
       <i class="icon ion ion-flag"></i>
   </div>

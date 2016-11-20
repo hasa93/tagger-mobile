@@ -18,6 +18,10 @@ angular.module('TaggerMobile')
   		});
   	}
 
+    $scope.viewDetails = function(item){
+      $state.go('search-view', { details: item });
+    }
+
   	$scope.refreshRecentList();
 
 });
