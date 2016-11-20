@@ -44,11 +44,11 @@ label.glass-input > input{
 .profile-name{
   display: inline-block;
   color: white;
-  font-size: 1.3em; 
+  font-size: 1.3em;
 }
 .profile-destination{
   color: red;
-  font-size: 1.0em; 
+  font-size: 1.0em;
 }
 
 .profile-badge{
@@ -89,7 +89,6 @@ label.glass-input > input{
 }
 /*fab design*/
 .fab {
-    
     position: relative;
     bottom: 10%;
     left:80%;
@@ -126,6 +125,10 @@ label.glass-input > input{
 }
 .unflaged{
 background:  #7f8c8d;
+}
+
+.thumb-card{
+  height: 87%;
 }
 
 /*Horizontal Scrolling */

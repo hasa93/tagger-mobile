@@ -62,20 +62,8 @@
             </div>
             <ion-scroll direction = "x">
                 <div class = "row scroll-horiz">
-                  <div class="card col col-20">
-                    <h5 class="product-head-text text-center"> Product Name</h5>
-                    <div class="item item-body">
-                        <img class="full-image" src="img/package.png">
-                    </div>
-                  </div>
-                  <div class="card col col-20">
-                    <h5 class="product-head-text text-center"> Product Name</h5>
-                    <div class="item item-body">
-                        <img class="full-image" src="img/package.png">
-                    </div>
-                  </div>
-                  <div class="card col col-20">
-                    <h5 class="product-head-text text-center"> Product Name</h5>
+                  <div ng-repeat="item in recent" class="card col col-20 thumb-card">
+                    <h5 class="product-head-text text-center"> {{ item.prodName.slice(0, 10) }} </h5>
                     <div class="item item-body">
                         <img class="full-image" src="img/package.png">
                     </div>
@@ -89,8 +77,8 @@
 
             <ion-scroll direction = "x">
               <div class = "row scroll-horiz">
-                <div class="card col col-20">
-                    <h5 class="product-head-text text-center"> Product Name</h5>
+                <div ng-repeat="item in recent" class="card col col-20 thumb-card">
+                    <h5 class="product-head-text text-center"> {{ item.prodName.slice(0, 10) }}</h5>
                     <div class="item item-body">
                         <img class="full-image" src = "img/gift.png">
                     </div>
