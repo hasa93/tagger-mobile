@@ -20,19 +20,30 @@
           <ion-checkbox ng-model="safetyisChecked" value = "Safety">Safety</ion-checkbox>
           <ion-checkbox ng-model="skinisChecked" value = "Safety">Baby Skin Care </ion-checkbox>
           <ion-checkbox ng-model="toyisChecked" value = "Safety">Infant Toys</ion-checkbox>
-
-          <div class="row">
-              <lable>Gender</label>
+          <div class="list">
+          <label class="item item-input item-select">
+            <div class="input-label">
+            Age Range
+            </div>
+            <select>
+              <option selected>0-3 weeks</option>
+              <option>3 months</option>
+              <option>1 year</option>
+              <option>2 years</option>
+            </select>
+          </label>
           </div>
-
-          <div class = "row text-center">
-              <input type="radio" name="gender"><label>Female</label>
-              <input type="radio" name="gender"><label>Male</label>
-          </div>
-
+          <ion-list radio-group [(ngModel)]="gender">
+            <ion-item>
+              <ion-label>Gender</ion-label>
+              <ion-radio value="male">Male</ion-radio>
+              <ion-radio value="female">Female</ion-radio>
+            </ion-item>
+          </ion-list>
           <ion-item menu-close href="#/profile">
               <i class= "icon ion-hammer"> Edit Profile</i>
-          </ion-list>
+          </ion-item>
+      </ion-list>
     </ion-content>
   </ion-side-menu>
 
