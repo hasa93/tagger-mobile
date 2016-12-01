@@ -73,11 +73,12 @@
             </div>
             <ion-scroll direction = "x">
                 <div class = "row scroll-horiz">
-                  <div ng-repeat="item in recent" class="card col col-20 thumb-card">
+                  <div ng-repeat="item in recent" class="list card col col-20 thumb-card">
                     <h5 class="product-head-text text-center"> {{ item.prodName.slice(0, 10) }} </h5>
                     <div class="item item-body">
-                        <img class="full-image" src="img/package.png">
+                        <img class="full-image" src="{{ item.prodImage }}">
                     </div>
+                    <h5 class="product-head-text text-center"> Rs. {{ item.price.toFixed(2)}} </h5>
                   </div>
                 </div>
             </ion-scroll>
@@ -91,7 +92,7 @@
                 <div ng-click="viewDetails(item)" ng-repeat="item in recent" class="card col col-20 thumb-card">
                     <h5 class="product-head-text text-center"> {{ item.prodName.slice(0, 10) }}</h5>
                     <div class="item item-body">
-                        <img class="full-image" src = "img/gift.png">
+                        <img class="full-image" src = "{{ item.prodImage }}">
                     </div>
                 </div>
                 </div>
