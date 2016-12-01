@@ -7,7 +7,7 @@ angular.module("TaggerMobile")
 	};
 
 	$scope.skip = function(){
-	    $state.go('edit-details');
+	    $state.go('dash');
     }
 
 	$scope.next = function(){
