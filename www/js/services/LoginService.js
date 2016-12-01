@@ -1,6 +1,6 @@
 angular.module("TaggerMobile")
 .service('LoginService', function($http, $q, config){
-	var baseApiUrl = config.locals.baseApiUrl;
+	var baseApiUrl = config.locals.baseUrl;
 
 	var o = {};
 
@@ -9,7 +9,7 @@ angular.module("TaggerMobile")
 	o.loginUser = function(){
 		var deferred = $q.defer();
 
-		$http.post(baseApiUrl + '/login/customer', o.user).then(function(response){
+		$http.post(baseApiUrl + 'api/login/customer', o.user).then(function(response){
 			var userProfile = response.data.profile;
 			deferred.resolve({ profile: userProfile });
 			localStorage.setItem("token", response.data.token);
@@ -23,7 +23,7 @@ angular.module("TaggerMobile")
 	o.signUpUser = function(){
 		var deferred = $q.defer();
 
-		$http.post(baseApiUrl + '/user/create/customer', o.user).then(function(response){
+		$http.post(baseApiUrl + 'api/user/create/customer', o.user).then(function(response){
 			if(response.data.status	=== "ERROR"){
 				deferred.resolve({ status: "ERROR" });
 			}
