@@ -1,6 +1,5 @@
 angular.module('TaggerMobile')
-.controller('DashCtrl', function($state,$scope, RetailService) {
-  	console.log("In Dash Controller");
+.controller('DashCtrl', function($state,$scope, RetailService, NfcService) {
 
   	$scope.recent = [];
 
@@ -22,6 +21,5 @@ angular.module('TaggerMobile')
       $state.go('search-view', { details: item });
     }
 
-  	$scope.refreshRecentList();
-
+    $scope.refreshRecentList();
 });

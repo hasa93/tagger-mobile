@@ -60,20 +60,16 @@ angular.module('TaggerMobile', ['ionic'])
       console.log("Standing by for NFC...");
 
       nfc.addTagDiscoveredListener(function(event){
-        console.log(JSON.stringify(event));
-        console.log("Tag id: " + nfc.bytesToHexString(event.tag.id));
-
-        $state.go('dash', { tag: event.tag });
+        var tagUid = nfc.bytesToHexString(event.tag.id).toUpperCase();
+        $rootScope.$broadcast('TAG-DETECTED', { uid: tagUid });
 
       }, function(success){
         console.log("Listening for tags...");
       });
 
       nfc.addNdefListener(function(event){
-        console.log(JSON.stringify(event));
-        console.log("NDEF Id: " + nfc.bytesToHexString(event.tag.id));
-
-        $state.go('dash', { tag: event.tag });
+        var tagUid = nfc.bytesToHexString(event.tag.id).toUpperCase();
+        $rootScope.$broadcast('TAG-DETECTED', { uid: tagUid });
 
       }, function(success){
         console.log("Listening for NDEF...");

@@ -1,22 +1,23 @@
 angular.module('TaggerMobile')
-.factory('NfcService', function($rootScope, $ionicPlatform){
+.factory('NfcService', function($state, $rootScope, $ionicPlatform, RetailService){
 	var o = {};
+	var product = {};
 
-	$ionicPlatform.ready(function(){
-		console.log("Standing by for NFC...");
+	$rootScope.$on('TAG-DETECTED', function(event, data){
+		console.log("Tag heard...");
+		var uid = data.uid;
 
-		nfc.addTagDiscoveredListener(function(event){
-			console.log(event);
-		}, function(success){
-			console.log("Listening for tags...");
-		})
-
-		nfc.showSettings(function(devInfo){
-			console.log(JSON.stringify(devInfo));
-		}, function(err){
-			console.log(err);
-		})
+		RetailService.getProductsByTag(uid).then(function(result){
+			product = result[0];
+			$state.go('search-view', { details: product });
+		}, function(error){
+			console.log("Error");
+		});
 	});
+
+	o.getProduct = function(){
+		return product;
+	}
 
 	return o;
 })
