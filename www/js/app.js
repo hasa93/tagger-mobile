@@ -26,31 +26,61 @@ angular.module('TaggerMobile', ['ionic'])
     controller:'SearchCtrl',
     params: {
       details:{}
+      authentication: true;
     }
   })
 
   .state('dash',{
     url:'/dash',
     templateUrl:'templates/dashboard.html',
-    controller:'DashCtrl'
+    controller:'DashCtrl',
+    params:{
+      authentication: true;
+    }
   })
   .state('profile', {
     url: '/profile',
     templateUrl:'templates/profile.html',
-    controller:'ProfileCtrl'
+    controller:'ProfileCtrl',
+    params:{
+      authentication: true;
+    }
   })
 
   $urlRouterProvider.otherwise('/login');
 })
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-
-
       cordova.plugins.Keyboard.disableScroll(true);
+
+      console.log("Standing by for NFC...");
+
+      nfc.addTagDiscoveredListener(function(event){
+        console.log(JSON.stringify(event));
+        console.log("Tag id: " + nfc.bytesToHexString(event.tag.id));
+
+        $state.go('dash', { tag: event.tag });
+
+      }, function(success){
+        console.log("Listening for tags...");
+      });
+
+      nfc.addNdefListener(function(event){
+        console.log(JSON.stringify(event));
+        console.log("NDEF Id: " + nfc.bytesToHexString(event.tag.id));
+
+        $state.go('dash', { tag: event.tag });
+
+      }, function(success){
+        console.log("Listening for NDEF...");
+      }, function(error){
+        console.log("NDEF listener failure...");
+        console.log(error);
+      });
     }
     if(window.StatusBar) {
       StatusBar.styleDefault();
