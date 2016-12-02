@@ -25,8 +25,8 @@ angular.module('TaggerMobile', ['ionic'])
     templateUrl:'templates/search-view.html',
     controller:'SearchCtrl',
     params: {
-      details:{}
-      authentication: true;
+      details:{},
+      authentication: true
     }
   })
 
@@ -35,7 +35,7 @@ angular.module('TaggerMobile', ['ionic'])
     templateUrl:'templates/dashboard.html',
     controller:'DashCtrl',
     params:{
-      authentication: true;
+      authentication: true
     }
   })
   .state('profile', {
@@ -43,7 +43,7 @@ angular.module('TaggerMobile', ['ionic'])
     templateUrl:'templates/profile.html',
     controller:'ProfileCtrl',
     params:{
-      authentication: true;
+      authentication: true
     }
   })
 
