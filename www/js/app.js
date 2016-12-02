@@ -1,11 +1,11 @@
 // Ionic Starter App
 
 angular.module('TaggerMobile', ['ionic'])
-.config(function($stateProvider,$urlRouterProvider, $ionicConfigProvider, configProvider){
+.config(function($stateProvider,$urlRouterProvider, $ionicConfigProvider, $httpProvider, configProvider){
 
   configProvider.locals.baseUrl = "http://ec2-54-186-114-41.us-west-2.compute.amazonaws.com:3000/";
 
-  $ionicConfigProvider.tabs.position('bottom');
+  $httpProvider.interceptors.push('InterceptorService');
 
   $stateProvider
   .state('login',{
