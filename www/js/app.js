@@ -1,11 +1,11 @@
 // Ionic Starter App
 
 angular.module('TaggerMobile', ['ionic'])
-.config(function($stateProvider,$urlRouterProvider, $ionicConfigProvider, configProvider){
+.config(function($stateProvider,$urlRouterProvider, $ionicConfigProvider, $httpProvider, configProvider){
 
   configProvider.locals.baseUrl = "http://ec2-54-186-114-41.us-west-2.compute.amazonaws.com:3000/";
 
-  $ionicConfigProvider.tabs.position('bottom');
+  $httpProvider.interceptors.push('InterceptorService');
 
   $stateProvider
   .state('login',{
@@ -70,20 +70,16 @@ angular.module('TaggerMobile', ['ionic'])
       console.log("Standing by for NFC...");
 
       nfc.addTagDiscoveredListener(function(event){
-        console.log(JSON.stringify(event));
-        console.log("Tag id: " + nfc.bytesToHexString(event.tag.id));
-
-        $state.go('dash', { tag: event.tag });
+        var tagUid = nfc.bytesToHexString(event.tag.id).toUpperCase();
+        $rootScope.$broadcast('TAG-DETECTED', { uid: tagUid });
 
       }, function(success){
         console.log("Listening for tags...");
       });
 
       nfc.addNdefListener(function(event){
-        console.log(JSON.stringify(event));
-        console.log("NDEF Id: " + nfc.bytesToHexString(event.tag.id));
-
-        $state.go('dash', { tag: event.tag });
+        var tagUid = nfc.bytesToHexString(event.tag.id).toUpperCase();
+        $rootScope.$broadcast('TAG-DETECTED', { uid: tagUid });
 
       }, function(success){
         console.log("Listening for NDEF...");
