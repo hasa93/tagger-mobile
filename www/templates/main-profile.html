@@ -1,32 +1,33 @@
-<ion-nav-view view-title="Profile">
+<ion-nav-view view-title="Main-Profile">
     <ion-view>
     <div class="profile-banner">
         <div class="row">
             <ion-icon></ion-icon>
             <div class="col col-top text-center">
-                <img class="profile-pic" src="img/profile.jpg" />
+                <img class="profile-pic" src="../img/profile.jpg" />
             </div>
             </div>
             <div class="row">
             <div class="col col-bottom text-center">
-                <h1 class="profile-name"> Hi, There! </h1>
-                <!-- <h2 class="profile-destination"> Managing Director </h2> -->
+                <h1 class="profile-name">Alen Melen</h1>
+                <h2 class="profile-destination">Managing Director</h2>
             </div>
         </div>
     </div>
         <div class="list">
             <ul class="list">
-                <li  class="item ion-android-person"> Me </li>
-                    <label class="item item-input">
-                        <input ng-model="profile.fname" type="text" placeholder="Me">
-                    </label>
+                <li  class="item ion-android-person"> Me  Alen Melen 
+                <div class="col text-right">
+                    <button class="ion-ios-compose"></button>
+                </div></li>
+                
                 <li class="item ion-android-call"> Contact</li>
                     <label class="item item-input">
-                        <input ng-model="profile.contact" type="text" placeholder="Contact">
+                        <input type="text" placeholder="Contact">
                     </label>
                 <li class="item ion-email"> Email</li>
                     <label class="item item-input">
-                        <input ng-model="profile.addr" type="email" placeholder="Email">
+                        <input type="email" placeholder="Email">
                     </label>
             </ul>
         </div>
@@ -37,7 +38,8 @@
             <div class="col text-right">
                 <button class="button button-outline button-positive" ng-click="next()">Next</button>
             </div>
+            
         </div>
-
+        
     </ion-view>
 </ion-nav-view>

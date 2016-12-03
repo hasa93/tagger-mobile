@@ -1,0 +1,97 @@
+<ion-side-menus>
+  <!-- Left menu -->
+  <ion-side-menu side="left">
+    <ion-content>
+
+      <div class="profile-banner-small">
+          <div class="col col-top text-center">
+              <img class="profile-pic-small" src="img/profile.jpg" />
+          </div>
+      </div>
+
+      <ion-list>
+          <div class="item item-divider">
+              Advanced Search
+          </div>
+
+          <ion-checkbox ng-model="clothChecked" value = "cloths">Cloths</ion-checkbox>
+          <ion-checkbox ng-model="accessoriesChecked" value = "Baby Accessories">Baby Accessories</ion-checkbox>
+          <ion-checkbox ng-model="safetyisChecked" value = "Safety">Safety</ion-checkbox>
+          <ion-checkbox ng-model="skinisChecked" value = "Safety">Baby Skin Care </ion-checkbox>
+          <ion-checkbox ng-model="toyisChecked" value = "Safety">Infant Toys</ion-checkbox>
+          <div class="list">
+          <label class="item item-input item-select">
+            <div class="input-label">
+            Age Range
+            </div>
+            <select>
+              <option selected>0-3 weeks</option>
+              <option>3 months</option>
+              <option>1 year</option>
+              <option>2 years</option>
+            </select>
+          </label>
+          </div>
+          <ion-list radio-group [(ngModel)]="gender">
+            <ion-item>
+              <ion-label>Gender</ion-label>
+              <ion-radio value="male">Male</ion-radio>
+              <ion-radio value="female">Female</ion-radio>
+            </ion-item>
+          </ion-list>
+          <ion-item menu-close href="#/profile">
+              <i class= "icon ion-hammer"> Edit Profile</i>
+          </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+
+  <ion-side-menu-content>
+      <ion-nav-bar class = "bar bar-dark">
+         <ion-nav-buttons>
+              <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+          </ion-nav-buttons>
+
+          <ion-nav-buttons side="secondary" >
+              <button  class="button button-icon icon ion-ios-search-strong" ng-click = gotoSearchView()></button>
+          </ion-nav-buttons>
+      </ion-nav-bar>
+      <ion-view view-title="Voucher" class="voucher-view">
+        <ion-content  overflow-scroll="true" scrollbar-y="true" class = " has-header">
+          <div class="card">
+            <div class="item item-text-wrap" style="background-color: grey;">
+               {{unclaimvoucher.id}} ID1
+            </div>
+          </div>
+          <div class="card">
+            <div class="item item-text-wrap" style="background-color: grey;">
+               {{unclaimvoucher.id}} ID2
+            </div>
+          </div>
+          <div class="card">
+            <div class="item item-text-wrap" style="background-color: grey;">
+               {{unclaimvoucher.id}} ID3
+            </div>
+          </div>
+          <div class="card">
+            <div class="item item-text-wrap" style="background-color: grey;">
+               {{unclaimvoucher.id}} ID4
+            </div>
+          </div>
+          <div class="card">
+            <div class="item item-text-wrap" style="background-color: grey;">
+               {{unclaimvoucher.id}} ID5
+            </div>
+          </div>
+          <div class="card">
+            <div class="item item-text-wrap" style="background-color: grey;">
+               {{unclaimvoucher.id}} ID6
+            </div>
+          </div>
+          <div class="card">
+            <div class="item item-text-wrap" style="background-color: grey;">
+               {{unclaimvoucher.id}} ID7
+            </div>
+          </div>
+        </ion-content>
+      </ion-view>

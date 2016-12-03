@@ -20,6 +20,16 @@ angular.module('TaggerMobile', ['ionic'])
     controller:'SignupCtrl'
   })
 
+  .state('voucher',{
+    url:'/voucher',
+    templateUrl:'templates/voucher.html',
+    controller:'VoucherCtrl',
+    params: {
+      details:{},
+      authentication: true
+    }
+  })
+
   .state('search-view',{
     url:'/search-view',
     templateUrl:'templates/search-view.html',
@@ -47,7 +57,7 @@ angular.module('TaggerMobile', ['ionic'])
     }
   })
 
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/voucher');
 })
 .run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
