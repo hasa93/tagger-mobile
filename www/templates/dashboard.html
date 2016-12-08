@@ -1,91 +1,49 @@
-<ion-view view-title="dashboard" overflow-scroll="true">
-<ion-side-menus>
-  <!-- Left menu -->
-  <ion-side-menu side="left">
-    <ion-content>
+<ion-view title="Dashboard">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
 
-      <div class="profile-banner-small">
-          <div class="col col-top text-center">
-              <img class="profile-pic-small" src="img/profile.jpg" />
-          </div>
-      </div>
+    <ion-nav-buttons side="right">
+        <button class="button button-icon icon ion-android-search"></button>
+    </ion-nav-buttons>
 
-      <ion-list>
-          <div class="item item-divider">
-              Filter Search
-          </div>
+    <ion-content class="has-header">
+        <div class="item item-divider text-center">
+            On Watchlist
+        </div>
 
-          <ion-checkbox ng-model="clothChecked" value = "cloths">Cloths</ion-checkbox>
-          <ion-checkbox ng-model="accessoriesChecked" value = "Baby Accessories">Baby Accessories</ion-checkbox>
-          <ion-checkbox ng-model="safetyisChecked" value = "Safety">Safety</ion-checkbox>
-          <ion-checkbox ng-model="skinisChecked" value = "Safety">Baby Skin Care </ion-checkbox>
-          <ion-checkbox ng-model="toyisChecked" value = "Safety">Infant Toys</ion-checkbox>
-          <div class="list">
-          <label class="item item-input item-select">
-            <div class="input-label">
-            Age Range
-            </div>
-            <select>
-              <option selected>0-3 weeks</option>
-              <option>3 months</option>
-              <option>1 year</option>
-              <option>2 years</option>
-            </select>
-          </label>
-          </div>
-          <ion-list radio-group [(ngModel)]="gender">
-            <ion-item>
-              <ion-label>Gender</ion-label>
-              <ion-radio value="male">Male</ion-radio>
-              <ion-radio value="female">Female</ion-radio>
-            </ion-item>
-          </ion-list>
-          <ion-item menu-close href="#/profile">
-              <i class= "icon ion-hammer"> Edit Profile</i>
-          </ion-item>
-      </ion-list>
-    </ion-content>
-  </ion-side-menu>
-
-  <ion-side-menu-content class="has-header">
-      <ion-nav-bar class = "bar bar-dark">
-          <ion-nav-buttons>
-              <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
-          </ion-nav-buttons>
-
-          <ion-nav-buttons side="secondary" >
-              <button  class="button button-icon icon ion-ios-search-strong" ng-click = gotoSearchView()></button>
-          </ion-nav-buttons>
-      </ion-nav-bar>
-            <div class="item item-divider text-center">
-              On Watchlist
-            </div>
-            <ion-scroll direction = "x">
-                <div class = "row scroll-horiz">
-                  <div ng-repeat="item in recent" class="list card col col-20 thumb-card">
+        <ion-scroll direction = "x">
+            <div class = "row scroll-horiz">
+                <div ng-click="viewDetails(item)" ng-repeat="item in recent" class="list card col col-20 thumb-card">
                     <h5 class="product-head-text text-center"> {{ item.name.slice(0, 10) }} </h5>
                     <div class="item item-body">
                         <img class="full-image" src="{{ item.image }}">
                     </div>
+
                     <h5 class="product-head-text text-center"> Rs. {{ item.price.toFixed(2)}} </h5>
-                  </div>
                 </div>
-            </ion-scroll>
-
-            <div class="item item-divider text-center">
-              Fresh Arrivals
             </div>
+        </ion-scroll>
 
-            <ion-scroll direction = "x">
-              <div class = "row scroll-horiz">
+        <div class="item item-divider text-center">
+            Fresh Arrivals
+        </div>
+
+        <ion-scroll direction = "x">
+            <div class = "row scroll-horiz">
                 <div ng-click="viewDetails(item)" ng-repeat="item in recent" class="card col col-20 thumb-card">
                     <h5 class="product-head-text text-center"> {{ item.name.slice(0, 10) }}</h5>
                     <div class="item item-body">
                         <img class="full-image" src = "{{ item.image }}">
                     </div>
                 </div>
-                </div>
-            </ion-scroll>
-  </ion-side-menu-content>
-</ion-side-menus>
+            </div>
+        </ion-scroll>
+    </ion-content>
+
+    <div class="nav-buttons">
+        <div ng-click="goToVouchers()" class="fab button padding">
+            <i class="icon ion ion-document"></i>
+        </div>
+    </div>
 </ion-view>

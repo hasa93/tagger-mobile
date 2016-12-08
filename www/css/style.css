@@ -78,6 +78,16 @@ label.glass-input > input{
 .dash-content{
   background: #ecf0f1;
 }
+
+.nav-buttons{
+  position: fixed;
+  right: 15%;
+  bottom: 2%;
+}
+
+.nav-buttons > .fab{
+  background-color: #e74c3c;
+}
 /* /Dashboard Styles */
 
 /*Dark Theme */
@@ -173,4 +183,42 @@ background:  #7f8c8d;
 .product-head-text{
   color:#3498db;
 }
+/* /product styles */
 
+/* Voucher View */
+.voucher-header{
+  font-size: x-large;
+  margin-bottom: 4%;
+}
+
+.branch-name{
+  color: #a8a8a8;
+  font-style: italic;
+  margin-bottom: 4%;
+  font-size: x-small;
+}
+
+.expire-label{
+  color: #646363;
+  margin-bottom: 2%;
+}
+
+.label-green{
+  color: #1b9900;
+}
+
+.label-red{
+  color: #990000;
+}
+
+.voucher-card{
+  margin: 4%;
+}
+/* /Voucher View */
+
+/*Product View*/
+.image-banner{
+  display: block;
+  margin:auto;
+}
+/* /Product View*/

@@ -14,7 +14,7 @@ angular.module("TaggerMobile")
 
 		LoginService.loginUser().then(function(response){
 			if(LoginService.isLoggedIn()){
-				$state.go('dash', { profile: response });
+				$state.go('app.dash');
 			}
 			else{
 				console.log("Invalid login");

@@ -5,12 +5,10 @@ angular.module("TaggerMobile")
 
 	$scope.$watch('nfcService.getProduct()', function(product){
 		console.log("New product details: " + JSON.stringify(product));
-		$scope.productDetails = product;
+		if(product.id != undefined){
+			$scope.productDetails = product;
+		}
 	});
 
-	$scope.goBack = function(){
-		$state.params.details = {};
-		$state.go('dash');
-		console.log($ionicHistory.viewHistory());
-	}
+	console.log($state.params);
 });

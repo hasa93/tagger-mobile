@@ -3,11 +3,6 @@ angular.module('TaggerMobile')
 
   	$scope.recent = [];
 
-    $scope.gotoSearchView = function(){
-      $state.go('search-view');
-      console.log("Switching to search view")
-    }
-
   	$scope.refreshRecentList = function(){
   		RetailService.getRecentProducts().then(function(result){
   			$scope.recent = result;
@@ -18,8 +13,14 @@ angular.module('TaggerMobile')
   	}
 
     $scope.viewDetails = function(item){
-      $state.go('search-view', { details: item });
+      $state.go('app.product', { details: item });
     }
 
-    $scope.refreshRecentList();
+    $scope.goToVouchers = function(){
+      $state.go('app.vouchers');
+    }
+
+    $scope.$on('$ionicView.enter', function(){
+        $scope.refreshRecentList();
+    });
 });

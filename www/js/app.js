@@ -1,64 +1,6 @@
 // Ionic Starter App
 
 angular.module('TaggerMobile', ['ionic'])
-.config(function($stateProvider,$urlRouterProvider, $ionicConfigProvider, $httpProvider, configProvider){
-
-  configProvider.locals.baseUrl = "http://ec2-54-186-114-41.us-west-2.compute.amazonaws.com:3000/";
-
-  $httpProvider.interceptors.push('InterceptorService');
-
-  $stateProvider
-  .state('login',{
-    url:'/login',
-    templateUrl:'templates/login.html',
-    controller:'LoginCtrl'
-  })
-
-  .state('signup',{
-    url:'/signup',
-    templateUrl:'templates/signup.html',
-    controller:'SignupCtrl'
-  })
-
-  .state('voucher',{
-    url:'/voucher',
-    templateUrl:'templates/voucher.html',
-    controller:'VoucherCtrl',
-    params: {
-      details:{},
-      authentication: true
-    }
-  })
-
-  .state('search-view',{
-    url:'/search-view',
-    templateUrl:'templates/search-view.html',
-    controller:'SearchCtrl',
-    params: {
-      details:{},
-      authentication: true
-    }
-  })
-
-  .state('dash',{
-    url:'/dash',
-    templateUrl:'templates/dashboard.html',
-    controller:'DashCtrl',
-    params:{
-      authentication: true
-    }
-  })
-  .state('profile', {
-    url: '/profile',
-    templateUrl:'templates/profile.html',
-    controller:'ProfileCtrl',
-    params:{
-      authentication: true
-    }
-  })
-
-  $urlRouterProvider.otherwise('/voucher');
-})
 .run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -92,4 +34,74 @@ angular.module('TaggerMobile', ['ionic'])
       StatusBar.styleDefault();
     }
   });
+})
+.config(function($stateProvider,$urlRouterProvider, $ionicConfigProvider, $httpProvider, configProvider){
+
+  configProvider.locals.baseUrl = "http://ec2-54-186-114-41.us-west-2.compute.amazonaws.com:3000/";
+
+  $httpProvider.interceptors.push('InterceptorService');
+  $ionicConfigProvider.backButton.previousTitleText(false);
+
+  $stateProvider
+  .state('login',{
+    url:'/login',
+    templateUrl:'templates/login.html',
+    controller:'LoginCtrl'
+  })
+
+  .state('signup',{
+    url:'/signup',
+    templateUrl:'templates/signup.html',
+    controller:'SignupCtrl'
+  })
+
+  .state('app',{
+    url:'/app',
+    abstract: true,
+    templateUrl: 'templates/mainmenu.html'
+  })
+
+  .state('app.dash',{
+    url:'/dash',
+    views:{
+      'menuContent':{
+        templateUrl: 'templates/dashboard.html',
+        controller: 'DashCtrl'
+      }
+    }
+  })
+
+  .state('app.vouchers',{
+    url:'/vouchers',
+    views:{
+      'menuContent': {
+        templateUrl:'templates/voucher.html',
+        controller:'VoucherCtrl'
+      }
+    }
+  })
+
+  .state('app.product',{
+      url:'/product',
+      views:{
+        'menuContent':{
+           templateUrl:'templates/productview.html',
+           controller:'SearchCtrl'
+        }
+      },
+      params: {
+          details:{}
+      }
+    })
+
+  .state('profile', {
+    url: '/profile',
+    templateUrl:'templates/profile.html',
+    controller:'ProfileCtrl',
+    params:{
+      authentication: true
+    }
+  })
+
+  $urlRouterProvider.otherwise('/login');
 })

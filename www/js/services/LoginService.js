@@ -12,7 +12,7 @@ angular.module("TaggerMobile")
 		var deferred = $q.defer();
 
 		$http.post(baseApiUrl + 'api/login/customer', o.user).then(function(response){
-			if(response.data.profile.status === 'OK'){
+			if(response.data.status === 'OK'){
 				profile = response.data.profile;
 				isLoggedIn = true;
 				deferred.resolve({ status: "SUCCESS" });

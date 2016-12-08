@@ -9,7 +9,7 @@ angular.module('TaggerMobile')
 
 		RetailService.getProductsByTag(uid).then(function(result){
 			product = result[0];
-			$state.go('search-view', { details: product });
+			$state.go('app.product', { details: product });
 		}, function(error){
 			console.log("Error");
 		});

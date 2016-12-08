@@ -36,5 +36,17 @@ angular.module("TaggerMobile")
 		return deferred.promise;
 	}
 
+	o.getCustomerVouchers = function(custContact){
+		var deferred = $q.defer();
+		$http.get(baseUrl + 'api/retail/find/voucher/cust/' + custContact).then(function(response){
+			console.log(response.data);
+			deferred.resolve(response.data);
+		}, function(err){
+			console.log(err);
+			deferred.reject({ status: "ERROR" });
+		});
+		return deferred.promise;
+	}
+
 	return o;
 });
