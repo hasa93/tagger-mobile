@@ -1,7 +1,32 @@
-<ion-view title="Product Details" hide-nav-bar="true">
-  <ion-content overflow-scroll="true" scrollbar-y="true">
-      <div class="image-container">
-          <img class="image-banner" src="{{ productDetails.image }}"/>
-      </div>
-  <ion-content>
+<ion-view title="Product Details">
+<ion-content class="has-header" overflow-scroll="true" scrollbar-y="true" class = "padding-top padding dash-content">
+    <div class="list">
+        <div class="list card">
+      		<div class="item item-avatar">
+        		<img src="{{ productDetails.image }}">
+        		<h2> {{ productDetails.name }} </h2>
+         		<p> Rs. {{ productDetails.price.toFixed(2) }} </p>
+      		</div>
+
+	   		<div class="item item-text-wrap">
+	   			<div class="list list-inset">
+	     			<div class="item">
+	     				<!--//try ageRange-->
+	    				<h3>Age Range</h3><h4>{{ productDetails.age }}</h4>
+	     			</div>
+
+	     			<div class="item" ng-show="productDetails.descr == null">
+	     				No description available yet
+	     			</div>
+
+	     			<div class="item">
+	     				{{ productDetails.descr }}
+	     			</div>
+	     		</div>
+	     	</div>
+     	</div>
+    </div>
+</ion-content>
 </ion-view>
+
+
