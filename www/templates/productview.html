@@ -11,6 +11,9 @@
 	   		<div class="item item-text-wrap">
 	   			<div class="list list-inset">
 	     			<div class="item">
+	     				<div class="item item-body">
+	     					<img src="{{ productDetails.image }}" class="full-image">
+	     				</div>
 	     				<!--//try ageRange-->
 	    				<h3>Age Range</h3><h4>{{ productDetails.age }}</h4>
 	     			</div>
@@ -23,6 +26,13 @@
 	     				{{ productDetails.descr }}
 	     			</div>
 	     		</div>
+	     		<div class="row responsive-sm">
+	     		<div class="col">
+	     		<button ng-click="flagProducts()" class="button button-block button-balanced">
+  					Flag 
+				</button>
+				</div>
+				</div>
 	     	</div>
      	</div>
     </div>

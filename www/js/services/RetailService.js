@@ -47,6 +47,18 @@ angular.module("TaggerMobile")
 		});
 		return deferred.promise;
 	}
+	o.flagProducts = function(prodId,custId){
+		console.log("In flagging service");
+		var deferred = $q.defer();
+		$http.post(baseUrl + 'api/retail/flag/', { custId: custId, prodId: prodId }).then(function(response){
+			console.log(response);
+			deferred.resolve({status: "SUCCESS"});
+		},function(err){
+			deferred.reject({status: "ERROR",msg:err});
+		});
+		return deferred.promise;
+	}
+
 
 	return o;
 });

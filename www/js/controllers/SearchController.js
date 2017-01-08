@@ -1,5 +1,5 @@
 angular.module("TaggerMobile")
-.controller('SearchCtrl', function($scope, $state, $ionicHistory, NfcService) {
+.controller('SearchCtrl', function($scope, $state, $ionicHistory, NfcService,RetailService,LoginService) {
 	$scope.productDetails = $state.params.details;
 	$scope.nfcService = NfcService;
 
@@ -9,6 +9,14 @@ angular.module("TaggerMobile")
 			$scope.productDetails = product;
 		}
 	});
+
+  	$scope.flagProducts = function(){
+  		console.log("flagging...");
+  		$scope.user =LoginService.getUserProfile();
+  		RetailService.flagProducts($scope.productDetails.id,$scope.user.id).then(function(result){
+  			console.log(result);
+  		});
+  	};
 
 	console.log($state.params);
 });
