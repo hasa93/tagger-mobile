@@ -144,7 +144,7 @@ background:  #7f8c8d;
 /*Horizontal Scrolling */
 .scroll-horiz {
   width: 200%;
-    height: 200px;
+  height:35%;
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
 }
@@ -229,3 +229,6 @@ background:  #7f8c8d;
 }
 
 /*scroll-content*/
+.list:last-child.card {
+    margin-bottom: 11px;
+}
