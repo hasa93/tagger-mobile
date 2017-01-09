@@ -1,6 +1,11 @@
 angular.module('TaggerMobile')
-.controller('DashCtrl', function($state,$scope, RetailService, NfcService,$ionicPopup, $timeout) {
-
+.controller('DashCtrl', function($state,$scope, RetailService, NfcService,$ionicPopup, $timeout,$ionicSideMenuDelegate) {
+      $scope.$on('$ionicView.enter', function(){
+      $ionicSideMenuDelegate.canDragContent(false);
+    });
+  $scope.$on('$ionicView.leave', function(){
+      $ionicSideMenuDelegate.canDragContent(true);
+    });
   	$scope.recent = [];
     $scope.categories = {
         'Bathing+and+Skin+Car' : [],

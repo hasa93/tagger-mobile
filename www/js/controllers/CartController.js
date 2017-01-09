@@ -1,7 +1,8 @@
 angular.module('TaggerMobile')
-.controller('CartCtrl', function($state,$scope,$ionicPopup, $timeout) {
+.controller('CartCtrl', function($state,$scope) {
   $scope.cartPopup = function(){
     $scope.data = {};
+    $scope.amount=0;
   var myPopup = $ionicPopup.show({
     template: '<input type="password" ng-model="data.wifi">',
     title: 'Enter Wi-Fi Password',
@@ -26,6 +27,7 @@ angular.module('TaggerMobile')
 
   myPopup.then(function(res) {
     console.log('Tapped!', res);
+    $scope.amount = res;
   });
 
   $timeout(function() {
