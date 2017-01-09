@@ -7,7 +7,7 @@ angular.module("TaggerMobile")
 	};
 
 	$scope.skip = function(){
-	    $state.go('dash');
+	    $state.go('app.dash');
     }
 
 	$scope.next = function(){
@@ -16,7 +16,7 @@ angular.module("TaggerMobile")
 		LoginService.user.contact = $scope.profile.contact;
 
 		LoginService.signUpUser().then(function(response){
-			$state.go('dash');
+			$state.go('app.dash');
 			console.log(response);
 		});
 	}
