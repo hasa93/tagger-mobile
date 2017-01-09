@@ -99,7 +99,7 @@ label.glass-input > input{
 }
 /*fab design*/
 .fab {
-    position: relative;
+    position: fixed;
     bottom: 10%;
     left:80%;
     border-radius: 50%;
@@ -222,3 +222,10 @@ background:  #7f8c8d;
   margin:auto;
 }
 /* /Product View*/
+/* Item Divider */
+.item-divider{
+  background-color: #44BBFF;
+  color: #ecf0f1;
+}
+
+/*scroll-content*/

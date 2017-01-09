@@ -81,6 +81,20 @@ angular.module('TaggerMobile', ['ionic'])
     }
   })
 
+  .state('app.flaglist',{
+      url:'/flaglist',
+      views:{
+        'menuContent':{
+           templateUrl:'templates/flaglist.html',
+           controller:'FlagCtrl'
+        }
+      },
+      params: {
+          details:{}
+      }
+    })
+
+
   .state('app.product',{
       url:'/product',
       views:{
