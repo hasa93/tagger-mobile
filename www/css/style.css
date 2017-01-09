@@ -105,18 +105,14 @@ label.glass-input > input{
     bottom: 10%;
     left:80%;
     border-radius: 50%;
-    -webkit-appearance: none;
     box-sizing: border-box;
     border: none;
     z-index: 20;
     width: 56px;
     height: 56px;
     overflow: hidden;
-    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    -webkit-transition: 0.2s linear;
     transition: 0.2s linear;
-    -webkit-transition-property: -webkit-transform, box-shadow;
     transition-property: transform, box-shadow;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
