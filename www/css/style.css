@@ -234,3 +234,15 @@ background:  #7f8c8d;
 .list:last-child.card {
     margin-bottom: 11px;
 }
+
+/*font styles*/
+.white{
+  color: #ecf0f1;
+  text-align: center;
+  padding-bottom: 12px;
+}
+
+
+.product-card{
+  display: flex;
+}
