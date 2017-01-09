@@ -36,7 +36,7 @@ label.glass-input > input{
 }
 
 .profile-banner-small{
-  height: 15vh;
+  height: 25vh;
   background-color:#0C0432;
   background-size: cover;
 }
@@ -73,7 +73,13 @@ label.glass-input > input{
 
 
 /* /Profile Styles */
+.has-header{
+  margin-top: 40%;
+}
 
+.has-head{
+  margin-top: 1%;
+}
 /* Dashboard Styles */
 .dash-content{
   background: #ecf0f1;
