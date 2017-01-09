@@ -73,12 +73,8 @@ label.glass-input > input{
 
 
 /* /Profile Styles */
-.has-header{
+.profile-header{
   margin-top: 40%;
-}
-
-.has-head{
-  margin-top: 1%;
 }
 /* Dashboard Styles */
 .dash-content{
