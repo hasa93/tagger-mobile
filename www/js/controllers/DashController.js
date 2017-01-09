@@ -2,6 +2,15 @@ angular.module('TaggerMobile')
 .controller('DashCtrl', function($state,$scope, RetailService, NfcService,$ionicPopup, $timeout) {
 
   	$scope.recent = [];
+    $scope.categories = {
+        'Bathing-and-Skin-Car' : [],
+        'Clothes' : [],
+        'Furniture' : [],
+        'Gifts' : [],
+        'Strollers' : [],
+        'Toy' : []
+    };
+
     $scope.cartPopup = function(){
     $scope.data = {};
     var myPopup = $ionicPopup.show({
@@ -16,7 +25,7 @@ angular.module('TaggerMobile')
         type: 'button-positive',
         onTap: function(e) {
           if (!$scope.data.wifi) {
-          
+
             e.preventDefault();
           } else {
             return $scope.data.wifi;
@@ -34,24 +43,31 @@ angular.module('TaggerMobile')
      myPopup.close();
   }, 60000);
  };
-  	$scope.refreshRecentList = function(){
-  		RetailService.getRecentProducts().then(function(result){
-  			$scope.recent = result;
-  			console.log(result);
-  		}, function(err){
-  			console.log(err);
-  		});
-  	}
 
-    $scope.viewDetails = function(item){
-      $state.go('app.product', { details: item });
-    }
+	$scope.refreshRecentList = function(){
+      console.log($scope.categories);
+      console.log(Object.keys($scope.categories));
 
-    $scope.goToVouchers = function(){
+      Object.keys($scope.categories).map(function(category){
+        var catRep = category.replace(/-/g, '%20');
+        RetailService.getRecentProducts(catRep).then(function(result){
+          $scope.categories[category] = result;
+          console.log($scope.categories);
+        }, function(err){
+          console.log(err);
+        });
+      });
+ 	}
+
+   $scope.viewDetails = function(item){
+     $state.go('app.product', { details: item });
+   }
+
+   $scope.goToVouchers = function(){
       $state.go('app.vouchers');
-    }
+   }
 
-    $scope.$on('$ionicView.enter', function(){
-        $scope.refreshRecentList();
-    });
+   $scope.$on('$ionicView.enter', function(){
+      $scope.refreshRecentList();
+   });
 });

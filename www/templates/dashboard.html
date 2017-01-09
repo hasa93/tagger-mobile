@@ -9,12 +9,12 @@
 
     <ion-content class="has-head">
         <div class="item item-divider text-center">
-            On Watchlist
+            Bathing and Skin Care
         </div>
 
         <ion-scroll direction = "x">
             <div class = "row scroll-horiz">
-                <div ng-click="viewDetails(item)" ng-repeat="item in recent" class="list card col col-20 thumb-card">
+                <div ng-click="viewDetails(item)" ng-repeat="item in categories.Bathing-and-Skin-Car" class="list card col col-20 thumb-card">
                     <h5 class="product-head-text text-center"> {{ item.name.slice(0, 10) }} </h5>
                     <div class="item item-body">
                         <img class="full-image" src="{{ item.image }}">
@@ -26,12 +26,72 @@
         </ion-scroll>
 
         <div class="item item-divider text-center">
-            Fresh Arrivals
+            Clothes
         </div>
 
         <ion-scroll direction = "x">
             <div class = "row scroll-horiz">
-                <div ng-click="viewDetails(item)" ng-repeat="item in recent" class="card col col-20 thumb-card">
+                <div ng-click="viewDetails(item)" ng-repeat="item in categories.Clothes" class="card col col-20 thumb-card">
+                    <h5 class="product-head-text text-center"> {{ item.name.slice(0, 10) }}</h5>
+                    <div class="item item-body">
+                        <img class="full-image" src = "{{ item.image }}">
+                    </div>
+                </div>
+            </div>
+        </ion-scroll>
+
+        <div class="item item-divider text-center">
+            Furniture
+        </div>
+
+        <ion-scroll direction = "x">
+            <div class = "row scroll-horiz">
+                <div ng-click="viewDetails(item)" ng-repeat="item in categories.Furniture" class="card col col-20 thumb-card">
+                    <h5 class="product-head-text text-center"> {{ item.name.slice(0, 10) }}</h5>
+                    <div class="item item-body">
+                        <img class="full-image" src = "{{ item.image }}">
+                    </div>
+                </div>
+            </div>
+        </ion-scroll>
+
+        <div class="item item-divider text-center">
+            Gifts
+        </div>
+
+        <ion-scroll direction = "x">
+            <div class = "row scroll-horiz">
+                <div ng-click="viewDetails(item)" ng-repeat="item in categories.Gifts" class="card col col-20 thumb-card">
+                    <h5 class="product-head-text text-center"> {{ item.name.slice(0, 10) }}</h5>
+                    <div class="item item-body">
+                        <img class="full-image" src = "{{ item.image }}">
+                    </div>
+                </div>
+            </div>
+        </ion-scroll>
+
+        <div class="item item-divider text-center">
+            Strollers
+        </div>
+
+        <ion-scroll direction = "x">
+            <div class = "row scroll-horiz">
+                <div ng-click="viewDetails(item)" ng-repeat="item in categories.Strollers" class="card col col-20 thumb-card">
+                    <h5 class="product-head-text text-center"> {{ item.name.slice(0, 10) }}</h5>
+                    <div class="item item-body">
+                        <img class="full-image" src = "{{ item.image }}">
+                    </div>
+                </div>
+            </div>
+        </ion-scroll>
+
+        <div class="item item-divider text-center">
+            Toy
+        </div>
+
+        <ion-scroll direction = "x">
+            <div class = "row scroll-horiz">
+                <div ng-click="viewDetails(item)" ng-repeat="item in categories.Toy" class="card col col-20 thumb-card">
                     <h5 class="product-head-text text-center"> {{ item.name.slice(0, 10) }}</h5>
                     <div class="item item-body">
                         <img class="full-image" src = "{{ item.image }}">

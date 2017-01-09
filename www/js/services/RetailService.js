@@ -9,10 +9,10 @@ angular.module("TaggerMobile")
 		});
 	}
 
-	o.getRecentProducts = function(){
+	o.getRecentProducts = function(category){
 		var deferred = $q.defer();
 
-		$http.get(baseUrl + 'api/product/new/arrivals/10').then(function(response){
+		$http.get(baseUrl + 'api/product/recent/'+ category +'/10').then(function(response){
 			getImageUrls(response.data);
 			deferred.resolve(response.data);
 		}, function	(error){
@@ -58,7 +58,6 @@ angular.module("TaggerMobile")
 		});
 		return deferred.promise;
 	}
-
 
 	return o;
 });
