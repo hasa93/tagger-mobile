@@ -107,6 +107,18 @@ angular.module('TaggerMobile', ['ionic'])
           details:{}
       }
     })
+    .state('app.cartview',{
+      url:'/cartview',
+      views:{
+        'menuContent':{
+           templateUrl:'templates/cartview.html',
+           controller:'CartCtrl'
+        }
+      },
+      params: {
+          details:{}
+      }
+    })
 
   .state('profile', {
     url: '/profile',
