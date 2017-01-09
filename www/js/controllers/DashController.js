@@ -50,9 +50,6 @@ angular.module('TaggerMobile')
  };
 
 	$scope.refreshRecentList = function(){
-      console.log($scope.categories);
-      console.log(Object.keys($scope.categories));
-
       Object.keys($scope.categories).map(function(category){
         var catRep = category.replace(/\+/g, '%20');
         RetailService.getRecentProducts(catRep).then(function(result){

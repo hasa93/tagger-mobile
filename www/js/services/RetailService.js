@@ -1,7 +1,8 @@
 angular.module("TaggerMobile")
-.service('RetailService', function($http, $q, config){
+.service('RetailService', function($http, $q, config, LoginService){
 	var o = {};
 	var baseUrl = config.locals.baseUrl;
+	var id = LoginService.getUserProfile().id;
 
 	var getImageUrls = function(images){
 		images.map(function(elem){
@@ -47,12 +48,24 @@ angular.module("TaggerMobile")
 		});
 		return deferred.promise;
 	}
+
 	o.flagProducts = function(prodId,custId){
 		console.log("In flagging service");
 		var deferred = $q.defer();
 		$http.post(baseUrl + 'api/retail/flag/', { custId: custId, prodId: prodId }).then(function(response){
 			console.log(response);
 			deferred.resolve({status: "SUCCESS"});
+		},function(err){
+			deferred.reject({status: "ERROR",msg:err});
+		});
+		return deferred.promise;
+	}
+
+	o.getCustomerPreferences = function(product){
+		var deferred = $q.defer();
+		$http.post(baseUrl + 'api/product/get/prefs/' + id, { product: product }).then(function(response){
+			console.log(response);
+			deferred.resolve(response.data);
 		},function(err){
 			deferred.reject({status: "ERROR",msg:err});
 		});
