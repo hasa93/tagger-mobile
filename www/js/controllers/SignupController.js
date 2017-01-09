@@ -19,6 +19,5 @@ angular.module("TaggerMobile")
 		}
 		LoginService.user = $scope.user;
 		$state.go('profile');
-
 	}
 })
