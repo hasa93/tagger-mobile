@@ -3,7 +3,7 @@ angular.module('TaggerMobile')
 
   	$scope.recent = [];
     $scope.categories = {
-        'Bathing-and-Skin-Car' : [],
+        'Bathing+and+Skin+Car' : [],
         'Clothes' : [],
         'Furniture' : [],
         'Gifts' : [],
@@ -49,7 +49,7 @@ angular.module('TaggerMobile')
       console.log(Object.keys($scope.categories));
 
       Object.keys($scope.categories).map(function(category){
-        var catRep = category.replace(/-/g, '%20');
+        var catRep = category.replace(/\+/g, '%20');
         RetailService.getRecentProducts(catRep).then(function(result){
           $scope.categories[category] = result;
           console.log($scope.categories);

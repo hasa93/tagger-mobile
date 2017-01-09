@@ -14,7 +14,7 @@
 
         <ion-scroll direction = "x">
             <div class = "row scroll-horiz">
-                <div ng-click="viewDetails(item)" ng-repeat="item in categories.Bathing-and-Skin-Car" class="list card col col-20 thumb-card">
+                <div ng-click="viewDetails(item)" ng-repeat="item in categories['Bathing+and+Skin+Car']" class="list card col col-20 thumb-card">
                     <h5 class="product-head-text text-center"> {{ item.name.slice(0, 10) }} </h5>
                     <div class="item item-body">
                         <img class="full-image" src="{{ item.image }}">
