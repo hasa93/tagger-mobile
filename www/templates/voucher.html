@@ -4,7 +4,7 @@
             <div class="voucher-card">
                 <p class="voucher-header"> Rs. {{ voucher.vouch_amount.toFixed(2) }} <span class="branch-name"> {{ voucher.branch_name }} </span></p>
                 <p ng-show="voucher.to_expire <= 0" class="expire-label label-red"> Expires Today </p>
-                <a class="button button-icon icon ion-android-share-alt" style="color: #3498db; float:right;"></a>
+                <a class="button button-icon icon ion-android-share-alt" style="color: #3498db; float:right;" ng-click =voucherpopup()></a>
                 <p ng-show="voucher.to_expire > 0" class="expire-label label-green"> <i class="ion-android-time"></i> Expire in {{ voucher.to_expire }} days </p>
             </div>
         </div>

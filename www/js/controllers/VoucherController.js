@@ -1,5 +1,5 @@
 angular.module("TaggerMobile")
-.controller('VoucherCtrl', function($scope, $state, LoginService, RetailService) {
+.controller('VoucherCtrl', function($scope, $state, LoginService, RetailService,$ionicPopup) {
 	var profile;
 	$scope.vouchers = [];
 
@@ -19,7 +19,38 @@ angular.module("TaggerMobile")
 			}
 		});
 	}
+    $scope.voucherpopup = function(){
+    $scope.data = {};
+    var myPopup = $ionicPopup.show({
+    template: '<input type="text" ng-model="data.wifi" placeholder= "07XXXXXXXX">',
+    title: 'Enter User Mobile Number',
+    subTitle: '',
+    scope: $scope,
+    buttons: [
+      { text: 'Cancel' },
+      {
+        text: '<b>Share</b>',
+        type: 'button-positive',
+        onTap: function(e) {
+          if (!$scope.data.wifi) {
 
+            e.preventDefault();
+          } else {
+            return $scope.data.wifi;
+          }
+        }
+      }
+    ]
+  });
+
+  myPopup.then(function(res) {
+    console.log('Tapped!', res);
+  });
+
+  $timeout(function() {
+     myPopup.close();
+  }, 60000);
+ };
 	$scope.$on('$ionicView.enter', function(){
 		console.log("switch to voucherview");
 		profile	= LoginService.getUserProfile();
