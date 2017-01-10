@@ -13,6 +13,7 @@ angular.module("TaggerMobile")
   	$scope.flagProducts = function(){
   		console.log("flagging...");
   		$scope.user =LoginService.getUserProfile();
+      console.log($scope.user.number);
   		RetailService.flagProducts($scope.productDetails.id,$scope.user.id).then(function(result){
   			console.log(result);
   		});

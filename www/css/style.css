@@ -246,3 +246,12 @@ background:  #7f8c8d;
 .product-card{
   display: flex;
 }
+
+.voucher-center{
+  font-size: 90px;text-align:center;color:#f1c40f;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
