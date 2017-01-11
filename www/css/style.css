@@ -94,6 +94,11 @@ label.glass-input > input{
 .nav-buttons > .fab{
   background-color: #e74c3c;
 }
+
+.item-thumb{
+  height:22vh;
+  overflow: hidden;
+}
 /* /Dashboard Styles */
 
 /*Dark Theme */
@@ -263,4 +268,5 @@ background:  #7f8c8d;
   border:5px solid #FFFFFF;
   background-color:#874D9E;
 }
+
 
