@@ -1,7 +1,10 @@
 angular.module("TaggerMobile")
 .controller('SearchCtrl', function($scope, $state, $ionicHistory, NfcService,RetailService,LoginService) {
-	$scope.productDetails = $state.params.details;
-	$scope.nfcService = NfcService;
+  $scope.nfcService = NfcService;
+
+	$scope.$on('$ionicView.enter', function(){
+    $scope.productDetails = $state.params.details;
+  });
 
 	$scope.$watch('nfcService.getProduct()', function(product){
 		console.log("New product details: " + JSON.stringify(product));
@@ -13,7 +16,7 @@ angular.module("TaggerMobile")
   	$scope.flagProducts = function(){
   		console.log("flagging...");
   		$scope.user =LoginService.getUserProfile();
-      console.log($scope.user.number);
+
   		RetailService.flagProducts($scope.productDetails.id,$scope.user.id).then(function(result){
   			console.log(result);
   		});
