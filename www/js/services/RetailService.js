@@ -76,8 +76,19 @@ angular.module("TaggerMobile")
 
 	o.getCustomerPreferences = function(product){
 		var deferred = $q.defer();
-		$http.post(baseUrl + 'api/product/get/prefs/' + id, { product: product }).then(function(response){
-			console.log(response);
+		$http.get(baseUrl + 'api/product/get/flagged/' + id).then(function(response){
+			getImageUrls(response.data);
+			deferred.resolve(response.data);
+		},function(err){
+			deferred.reject({status: "ERROR",msg:err});
+		});
+		return deferred.promise;
+	}
+
+	o.getFlaggedProducts = function(){
+		var deferred = $q.defer();
+		$http.post(baseUrl + 'api/product/get/prefs/' + id).then(function(response){
+			getImageUrls(response.data);
 			deferred.resolve(response.data);
 		},function(err){
 			deferred.reject({status: "ERROR",msg:err});

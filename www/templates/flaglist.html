@@ -1,15 +1,15 @@
 <ion-view title="Flag Details">
 <ion-content class="has-header" overflow-scroll="true" scrollbar-y="true" class = "padding-top padding dash-content">
   <div class="list" ng-repeat = "item in productlist">
-    <a class="item item-avatar"  href="#">
+    <a class="item item-avatar"  ng-click="viewFlagged($index)">
       <img src="{{ item.image }}">
-      <h2>{{ productlist.data.name }} </h2>
+      <h2>{{ item.name }} </h2>
       <p>Rs. {{ item.price.toFixed(2) }}</p>
     </a>
   </div>
 
 
-        <div ng-show="vouchers.length == 0" class="voucher-center">
+        <div ng-show="productlist.length == 0" class="voucher-center">
             <i class="ion-alert"><h4>Sorry! No Flagged Products available </h4></i>
         </div>
 
