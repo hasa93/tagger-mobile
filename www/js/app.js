@@ -58,7 +58,8 @@ angular.module('TaggerMobile', ['ionic'])
   .state('app',{
     url:'/app',
     abstract: true,
-    templateUrl: 'templates/mainmenu.html'
+    templateUrl: 'templates/mainmenu.html',
+    controller: 'MainCtrl'
   })
 
   .state('app.dash',{
