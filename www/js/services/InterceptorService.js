@@ -1,8 +1,8 @@
 angular.module('TaggerMobile')
-.factory('InterceptorService', function(){
+.factory('InterceptorService', function($rootScope){
 	return{
 		request: function(config){
-			var token = localStorage.getItem("token");
+			var token = $rootScope.token;
 
 			if(!token || token == ""){
 				return config;

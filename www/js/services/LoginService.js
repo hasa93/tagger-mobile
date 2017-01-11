@@ -1,5 +1,5 @@
 angular.module("TaggerMobile")
-.service('LoginService', function($http, $q, config){
+.service('LoginService', function($rootScope, $http, $q, config){
 	var baseApiUrl = config.locals.baseUrl;
 
 	var profile = {};
@@ -12,9 +12,11 @@ angular.module("TaggerMobile")
 		$http.post(baseApiUrl + 'api/login/customer', user).then(function(response){
 			if(response.data.status === 'OK'){
 				profile = response.data.profile;
+				$rootScope.token = response.data.token;
+
+				localStorage.setItem("token", response.data.token);
 				isLoggedIn = true;
 				deferred.resolve({ status: "SUCCESS" });
-				localStorage.setItem("token", response.data.token);
 			}
 			else{
 				isLoggedIn = false;
