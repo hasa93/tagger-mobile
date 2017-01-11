@@ -6,12 +6,10 @@ angular.module("TaggerMobile")
 	var isLoggedIn = false;
 	var o = {};
 
-	o.user = {};
-
-	o.loginUser = function(){
+	o.loginUser = function(user){
 		var deferred = $q.defer();
 
-		$http.post(baseApiUrl + 'api/login/customer', o.user).then(function(response){
+		$http.post(baseApiUrl + 'api/login/customer', user).then(function(response){
 			if(response.data.status === 'OK'){
 				profile = response.data.profile;
 				isLoggedIn = true;
@@ -30,10 +28,10 @@ angular.module("TaggerMobile")
 		return deferred.promise;
 	}
 
-	o.signUpUser = function(){
+	o.signUpUser = function(user){
 		var deferred = $q.defer();
 
-		$http.post(baseApiUrl + 'api/user/create/customer', o.user).then(function(response){
+		$http.post(baseApiUrl + 'api/user/create/customer', user).then(function(response){
 			if(response.data.status	=== "ERROR"){
 				deferred.resolve({ status: "ERROR" });
 			}
@@ -43,6 +41,23 @@ angular.module("TaggerMobile")
 		}, function(error){
 			deferred.reject({ status: "ERROR" });
 		});
+		return deferred.promise;
+	}
+
+	o.updateUserProfile = function(profile){
+		var deferred = $q.defer();
+
+		$http.post(baseApiUrl + 'api/user/update/customer', profile).then(function(response){
+			if(response.data.status	=== "ERROR"){
+				deferred.resolve({ status: "ERROR", msg: response.data.msg });
+			}
+			else{
+				deferred.resolve({ status: "SUCCESS" });
+			}
+		}, function(error){
+			deferred.reject({ status: "ERROR" });
+		});
+
 		return deferred.promise;
 	}
 

@@ -1,23 +1,34 @@
 angular.module("TaggerMobile")
-.controller('ProfileCtrl', function($scope, $state, LoginService){
-	$scope.profile = {
-		fname: '',
-		lname: '',
-		contact: ''
-	};
+.controller('ProfileCtrl', function($scope, $state, $ionicPopup, LoginService){
+	$scope.shadowProfile = LoginService.getUserProfile();
+	$scope.profile = LoginService.getUserProfile();
 
-	$scope.skip = function(){
-	    $state.go('app.dash');
-    }
-
-	$scope.next = function(){
-		LoginService.user.fname = $scope.profile.fname;
-		LoginService.user.lname = $scope.profile.lname;
-		LoginService.user.contact = $scope.profile.contact;
-
-		LoginService.signUpUser().then(function(response){
-			$state.go('app.dash');
-			console.log(response);
+	$scope.update = function(){
+		Object.keys($scope.profile).map(function(field){
+			if(!$scope.shadowProfile[field] == null && $scope.profile[field] == null){
+				$ionicPopup.alert({
+					title: "Blank Fields",
+					template: "Some blank fields previously filled were detected"
+				});
+				return;
+			}
 		});
+
+		LoginService.updateUserProfile($scope.profile).then(function(result){
+			if(result.status === "ERROR"){
+				$ionicPopup.alert({
+					title: "Update Failed",
+					template: "Oops something went wrong..."
+				});
+				return;
+			}
+			$state.go('app.dash');
+		}, function(err){
+			$ionicPopup.alert({
+				title: "Update Failed",
+				template: "Oops something went wrong..."
+			});
+			return;
+		})
 	}
 });

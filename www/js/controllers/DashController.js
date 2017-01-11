@@ -1,7 +1,8 @@
 angular.module('TaggerMobile')
-.controller('DashCtrl', function($state,$scope, RetailService, NfcService,$ionicPopup, $timeout,$ionicSideMenuDelegate) {
+.controller('DashCtrl', function($state,$scope, RetailService, NfcService,$ionicPopup, $timeout,$ionicSideMenuDelegate, LoginService) {
       $scope.$on('$ionicView.enter', function(){
-      $ionicSideMenuDelegate.canDragContent(false);
+        console.log(LoginService.getUserProfile());
+        $ionicSideMenuDelegate.canDragContent(false);
     });
   $scope.$on('$ionicView.leave', function(){
       $ionicSideMenuDelegate.canDragContent(true);

@@ -120,10 +120,14 @@ angular.module('TaggerMobile', ['ionic'])
       }
     })
 
-  .state('profile', {
+  .state('app.profile', {
     url: '/profile',
-    templateUrl:'templates/profile.html',
-    controller:'ProfileCtrl',
+    views:{
+      'menuContent':{
+        templateUrl:'templates/profile.html',
+        controller:'ProfileCtrl'
+      }
+    },
     params:{
       authentication: true
     }

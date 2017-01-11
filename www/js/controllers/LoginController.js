@@ -10,9 +10,7 @@ angular.module("TaggerMobile")
 	}
 
 	$scope.login = function(){
-		LoginService.user = $scope.user;
-		
-		LoginService.loginUser().then(function(response){
+		LoginService.loginUser($scope.user).then(function(response){
 			if(LoginService.isLoggedIn()){
 				$state.go('app.dash');
 			}

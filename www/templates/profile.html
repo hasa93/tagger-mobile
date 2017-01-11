@@ -1,5 +1,5 @@
 <ion-nav-view view-title="Profile">
-    <ion-view>
+    <ion-view hide-nav-bar="true">
     <div class="profile-banner">
         <div class="row">
             <ion-icon></ion-icon>
@@ -16,26 +16,23 @@
     </div>
         <div class="list">
             <ul class="list">
-                <li  class="item ion-android-person"> Name </li>
+                <li  class="item ion-android-person">First Name </li>
                     <label class="item item-input">
-                        <input ng-model="profile.fname" type="text" placeholder="Me">
+                        <input ng-model="profile.fname" type="text" placeholder="Tell us about">
+                    </label>
+                <li class="item ion-android-person"> Last Name </li>
+                    <label class="item item-input">
+                        <input ng-model="profile.lname" type="text" placeholder="Something More">
                     </label>
                 <li class="item ion-android-call"> Contact</li>
                     <label class="item item-input">
-                        <input ng-model="profile.contact" type="text" placeholder="Contact">
-                    </label>
-                <li class="item ion-email"> Email</li>
-                    <label class="item item-input">
-                        <input ng-model="profile.addr" type="email" placeholder="Email">
+                        <input ng-model="profile.contact" type="text" placeholder="Contact Number">
                     </label>
             </ul>
         </div>
         <div class="row">
-            <div class="col text-left">
-                <button class="button button-outline button-positive" ng-click="skip()">Skip</button>
-            </div>
             <div class="col text-right">
-                <button class="button button-outline button-positive" ng-click="next()">Next</button>
+                <button class="button button-outline button-block button-positive" ng-click="update()">Update Profile </button>
             </div>
         </div>
 
