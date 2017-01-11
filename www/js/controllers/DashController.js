@@ -17,17 +17,16 @@ angular.module('TaggerMobile')
         'Toy' : []
     };
 
-    $scope.cartPopup = function(){
+    $scope.search = function(){
     $scope.data = {};
     var myPopup = $ionicPopup.show({
-    template: '<input type="text" ng-model="data.wifi" placeholder= "Rs:">',
-    title: 'Enter Your Amount',
-    subTitle: 'Please use normal things',
+    template: '<input type="text" ng-model="data.wifi" placeholder= "Search">',
+    title: 'Search',
     scope: $scope,
     buttons: [
       { text: 'Cancel' },
       {
-        text: '<b>Add</b>',
+        text: '<b>Search</b>',
         type: 'button-positive',
         onTap: function(e) {
           if (!$scope.data.wifi) {
