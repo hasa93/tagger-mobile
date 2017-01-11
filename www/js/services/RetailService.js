@@ -61,6 +61,19 @@ angular.module("TaggerMobile")
 		return deferred.promise;
 	}
 
+	o.getflagProducts = function(custId){
+		console.log("Flagging service get flags");
+		var deferred = $q.defer();
+		$http.get(baseUrl + 'api/product/get/flagged/' + id).then(function(response){
+			console.log(response.data);
+			getImageUrls(response.data);
+			deferred.resolve(response.data);
+		},function(err){
+			deferred.reject({stsus: "ERROR",msg:err});
+		});
+		return deferred.promise;
+	}
+
 	o.getCustomerPreferences = function(product){
 		var deferred = $q.defer();
 		$http.post(baseUrl + 'api/product/get/prefs/' + id, { product: product }).then(function(response){
