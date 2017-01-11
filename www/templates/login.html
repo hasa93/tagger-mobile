@@ -7,14 +7,14 @@
     <div class="row login-body">
       <div class="list list-inset col col-center col-80 col-offset-10 bg-transparent">
         <label class="item item-input bg-transparent glass-input">
-          <input vdMaximum vdMinimum vdRequired ng-model="user.uname" type="text" placeholder="Username">
+          <input ng-model="user.uname" type="text" placeholder="Username">
         </label>
 
         <label class="item item-input bg-transparent glass-input">
-          <input vdMaximum vdMinimum vdRequired ng-model="user.passwd" type="password" placeholder="Password">
+          <input ng-model="user.passwd" type="password" placeholder="Password">
         </label>
 
-        <button vdRequired ng-click="login()" class="button button-block button-assertive">
+        <button ng-click="login()" class="button button-block button-assertive">
             LogIn
         </button>
 

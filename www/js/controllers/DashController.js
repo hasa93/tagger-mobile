@@ -20,7 +20,7 @@ angular.module('TaggerMobile')
     $scope.search = function(){
     $scope.data = {};
     var myPopup = $ionicPopup.show({
-    template: '<input type="text" ng-model="data.wifi" placeholder= "Search">',
+    template: '<input type="text" ng-model="data.searchid" placeholder= "Search">',
     title: 'Search',
     scope: $scope,
     buttons: [
