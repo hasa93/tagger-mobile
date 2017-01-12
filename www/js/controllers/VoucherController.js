@@ -1,5 +1,5 @@
 angular.module("TaggerMobile")
-.controller('VoucherCtrl', function($scope, $state, LoginService, RetailService,$ionicPopup) {
+.controller('VoucherCtrl', function($scope, $state, $ionicPopup, ionicToast, LoginService, RetailService) {
 	var profile;
 	$scope.vouchers = [];
 
@@ -19,42 +19,45 @@ angular.module("TaggerMobile")
 			}
 		});
 	}
-    $scope.voucherpopup = function(){
-    $scope.data = {};
-    var myPopup = $ionicPopup.show({
-    template: '<input type="text" ng-model="data.wifi" placeholder= "07XXXXXXXX">',
-    title: 'Enter User Mobile Number',
-    subTitle: '',
-    scope: $scope,
-    buttons: [
-      { text: 'Cancel' },
-      {
-        text: '<b>Share</b>',
-        type: 'button-positive',
-        onTap: function(e) {
-          if (!$scope.data.wifi) {
 
-            e.preventDefault();
-          } else {
-            return $scope.data.wifi;
-          }
-        }
-      }
-    ]
-  });
+  var isValidNumber = function(number){
+      return (number.length == 10 && isFinite(number));
+  }
 
-  myPopup.then(function(res) {
-    console.log('Tapped!', res);
-  });
-
-  $timeout(function() {
-     myPopup.close();
-  }, 60000);
- };
 	$scope.$on('$ionicView.enter', function(){
 		console.log("switch to voucherview");
 		profile	= LoginService.getUserProfile();
 		refreshVouchers();
 		console.log(profile);
 	})
+
+  $scope.transferVoucher = function(voucher){
+      $ionicPopup.prompt({
+        title: "Transfer Voucher",
+        inputType: "text",
+        inputPlaceholder: "Receiver Mobile Number"
+      }).then(function(res){
+          if(isValidNumber(res)){
+            console.log(voucher.vouch_id);
+            var receipt = {
+              voucherId: voucher.vouch_id,
+              recvContact: res
+            };
+
+            RetailService.transferVoucher(receipt).then(function(result){
+              ionicToast.show('Voucher shared successfully!', 'bottom', false, 2500);
+              refreshVouchers();
+            }, function(err){
+                console.log("error");
+                if(err.msg === "Receiver not found"){
+                  ionicToast.show('Receiver not found!', 'bottom', false, 2500);
+                }
+            });
+          }
+          else{
+            console.log("invalid");
+            ionicToast.show('Invalid Mobile Number', 'bottom', false, 2500);
+          }
+      });
+  }
 });

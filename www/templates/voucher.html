@@ -2,9 +2,10 @@
     <ion-content overflow-scroll="true" scrollbar-y="true" class = "has-header">
         <div ng-repeat="voucher in vouchers" class="card">
             <div class="voucher-card">
-                <p class="voucher-header"> Rs. {{ voucher.vouch_amount.toFixed(2) }} <span class="branch-name"> {{ voucher.branch_name }} </span></p>
+                <p class="voucher-header"> ID {{ voucher.vouch_id }} <span class="branch-name"> FROM {{ voucher.branch_name }} </span> </p>
+                <p class="voucher-header header-sub"> Rs. {{ voucher.vouch_amount.toFixed(2) }} </p>
                 <p ng-show="voucher.to_expire <= 0" class="expire-label label-red"> Expires Today </p>
-                <a class="button button-icon icon ion-android-share-alt" style="color: #3498db; float:right;" ng-click =voucherpopup()></a>
+                <a class="button button-icon icon ion-android-share-alt" style="color: #3498db; float:right;" ng-click =transferVoucher(voucher)></a>
                 <p ng-show="voucher.to_expire > 0" class="expire-label label-green"> <i class="ion-android-time"></i> Expires in {{ voucher.to_expire }} days </p>
             </div>
         </div>

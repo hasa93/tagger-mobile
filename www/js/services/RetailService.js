@@ -96,5 +96,25 @@ angular.module("TaggerMobile")
 		return deferred.promise;
 	}
 
+	o.transferVoucher = function(transferReceipt){
+		var deferred = $q.defer();
+		console.log("transferring voucher...");
+
+		$http.post(baseUrl + 'api/retail/voucher/transfer', transferReceipt).then(function(response){
+			var res = response.data;
+			console.log(res);
+
+			if(res.status === "ERROR" && res.msg === "Receiver not found"){
+				deferred.reject({ status: "ERROR", msg: "Receiver not found" });
+			}
+			else{
+				deferred.resolve(res);
+			}
+		},function(err){
+			deferred.reject({status: "ERROR", msg:err});
+		});
+		return deferred.promise;
+	}
+
 	return o;
 });
