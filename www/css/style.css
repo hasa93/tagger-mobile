@@ -243,6 +243,7 @@ background:  #7f8c8d;
   margin-left: 20%;
   margin-top: 2%;
   margin-bottom: 2%;
+  padding: 4px;
 }
 
 /*scroll-content*/
@@ -278,3 +279,6 @@ background:  #7f8c8d;
 }
 
 
+.skin{
+  background-color:#bfe2ff;
+}
