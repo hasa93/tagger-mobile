@@ -1,5 +1,5 @@
 angular.module("TaggerMobile")
-.controller('LoginCtrl',function($state, $scope, $ionicPopup, LoginService,ionicToast){
+.controller('LoginCtrl',function($state, $scope, $ionicPopup, LoginService, RetailService, ionicToast){
 	$scope.user = {
 		uname: "",
 		passwd: ""
@@ -13,6 +13,7 @@ angular.module("TaggerMobile")
 		console.log("Logging In...");
 		LoginService.loginUser($scope.user).then(function(response){
 			if(LoginService.isLoggedIn()){
+				RetailService.init();
 				$state.go('app.dash');
 			}
 		}, function(err){

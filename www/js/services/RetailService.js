@@ -2,12 +2,16 @@ angular.module("TaggerMobile")
 .service('RetailService', function($http, $q, config, LoginService){
 	var o = {};
 	var baseUrl = config.locals.baseUrl;
-	var id = LoginService.getUserProfile().id;
+	var id = "";
 
 	var getImageUrls = function(images){
 		images.map(function(elem){
 			elem.image = baseUrl + elem.image;
 		});
+	}
+
+	o.init = function(){
+		id = LoginService.getUserProfile().id;
 	}
 
 	o.getRecentProducts = function(category){
@@ -49,15 +53,24 @@ angular.module("TaggerMobile")
 		return deferred.promise;
 	}
 
-	o.flagProducts = function(prodId,custId){
-		console.log("In flagging service");
+	o.flagProduct = function(prodId){
+		var flag = {
+			custId: id,
+			prodId: prodId
+		};
+
+		console.log(flag);
+		console.log(id);
+
 		var deferred = $q.defer();
-		$http.post(baseUrl + 'api/retail/flag/', { custId: custId, prodId: prodId }).then(function(response){
+
+		$http.post(baseUrl + 'api/retail/flag', flag).then(function(response){
 			console.log(response);
 			deferred.resolve({status: "SUCCESS"});
 		},function(err){
 			deferred.reject({status: "ERROR",msg:err});
 		});
+
 		return deferred.promise;
 	}
 
@@ -75,9 +88,12 @@ angular.module("TaggerMobile")
 	}
 
 	o.getCustomerPreferences = function(product){
+		console.log(product);
+
 		var deferred = $q.defer();
-		$http.get(baseUrl + 'api/product/get/prefs/' + id).then(function(response){
-			getImageUrls(response.data);
+		$http.post(baseUrl + 'api/product/get/prefs/' + id, product).then(function(response){
+			//getImageUrls(response.data);
+			console.log(response.data);
 			deferred.resolve(response.data);
 		},function(err){
 			deferred.reject({status: "ERROR",msg:err});
@@ -130,6 +146,25 @@ angular.module("TaggerMobile")
 		},function(err){
 			deferred.reject({status: "ERROR",msg:err});
 		});
+		return deferred.promise;
+	}
+
+	o.resetFlag = function(prodId){
+		var flag = {
+			custId: id,
+			prodId: prodId
+		};
+
+		var deferred = $q.defer();
+
+		console.log(flag);
+
+		$http.post(baseUrl + 'api/retail/flag/remove', flag).then(function(response){
+			deferred.resolve(response.data);
+		},function(err){
+			deferred.reject({status: "ERROR",msg:err});
+		});
+
 		return deferred.promise;
 	}
 

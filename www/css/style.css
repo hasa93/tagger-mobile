@@ -230,6 +230,15 @@ background:  #7f8c8d;
   display: block;
   margin:auto;
 }
+
+.unflag-border{
+  background-color: white !important;
+  border: 4px solid #e74c3c;
+}
+
+.fab.unflag-border > .ion-flag{
+  color: #e74c3c;
+}
 /* /Product View*/
 /* Item Divider */
 .item-divider{

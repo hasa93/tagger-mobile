@@ -39,7 +39,7 @@
     </div>
 </ion-content>
 	<div class="nav-buttons">
-        <div ng-click="flagProducts()" class="fab button padding">
+        <div ng-click="toggleFlag()" class="fab button padding" ng-class="{'unflag-border' : productDetails.flag == null}">
             <i class="icon ion ion-flag"></i>
         </div>
     </div>

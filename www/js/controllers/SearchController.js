@@ -4,6 +4,15 @@ angular.module("TaggerMobile")
 
 	$scope.$on('$ionicView.enter', function(){
     $scope.productDetails = $state.params.details;
+
+    RetailService.getCustomerPreferences($scope.productDetails).then(function(response){
+        var prefs = response[0];
+        displayRatings(null, prefs.ratings);
+        $scope.productDetails.flag = prefs.flag;
+        console.log(prefs);
+    }, function(err){
+        console.log(err);
+    });
   });
 
 	$scope.$watch('nfcService.getProduct()', function(product){
@@ -13,20 +22,25 @@ angular.module("TaggerMobile")
 		}
 	});
 
-  	$scope.flagProducts = function(){
+  	$scope.toggleFlag = function(){
   		console.log("flagging...");
-  		$scope.user =LoginService.getUserProfile();
- ionicToast.show('Flaging Product', 'bottom', false, 2500);
 
-  		RetailService.flagProducts($scope.productDetails.id,$scope.user.id).then(function(result){
-      if (result.status=='FAILED') {
-            ionicToast.show('Failed to Tag', 'bottom', true, 1500);
-        }
-        else{
-            ionicToast.show('Flagged Successfull.', 'bottom', true, 1500);
-        }
-  			console.log(result);
-  		});
+      if($scope.productDetails.flag == null){
+          ionicToast.show('Flagged...', 'bottom', false, 2500);
+  		    RetailService.flagProduct($scope.productDetails.id).then(function(result){
+  			     console.log(result);
+             $scope.productDetails.flag = 1;
+  		    });
+
+      }
+      else{
+          ionicToast.show('Unflagged...', 'bottom', false, 2500);
+          RetailService.resetFlag($scope.productDetails.id).then(function(result){
+             $scope.productDetails.flag = null;
+             console.log(result);
+          });
+      }
+
   	};
 
 	console.log($state.params);
@@ -52,7 +66,7 @@ angular.module("TaggerMobile")
     question: 'question 5'
   }];
 
-  $scope.setRating = function(question,val) {
+  var displayRatings = function(question, val){
     var rtgs = $scope.ratingArr;
     for (var i = 0; i < rtgs.length; i++) {
       if (i < val) {
@@ -61,8 +75,13 @@ angular.module("TaggerMobile")
         rtgs[i].icon = 'ion-ios-star-outline';
       }
     };
+  }
+
+  $scope.setRating = function(question,val) {
+    displayRatings(question, val);
 
     RetailService.rateProduct($scope.productDetails.id, val).then(function(result){
+      console.log(result);
       console.log("Rating succeeded");
     }, function(err){
       console.log("Rating failed");
