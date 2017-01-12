@@ -10,7 +10,7 @@
         <div class="item item-divider text-center">
             Bathing and Skin Care
         </div>
-        <ion-scroll has-bouncing="true" direction="x" overflow-scroll="true" scrollbar-x="false">
+        <ion-scroll has-bouncing="true" direction="x" overflow-scroll="false" scrollbar-x="false">
             <div class = "row scroll-horiz">
                 <div on-double-tap = "viewDetails(item)" ng-repeat="item in categories['Bathing+and+Skin+Car']" class="list card col col-20 thumb-card">
                     <h5 class="product-head-text text-center"> {{ item.name.slice(0, 10) }} </h5>
@@ -27,7 +27,7 @@
             Clothes
         </div>
 
-        <ion-scroll direction="x" overflow-scroll="true" scrollbar-x="false" has-bouncing="true">
+        <ion-scroll has-bouncing="true" direction="x" overflow-scroll="false" scrollbar-x="false">
             <div class = "row scroll-horiz">
                 <div ng-click="viewDetails(item)" ng-repeat="item in categories.Clothes" class="card col col-20 thumb-card">
                     <h5 class="product-head-text text-center"> {{ item.name.slice(0, 10) }}</h5>
@@ -43,7 +43,7 @@
             Furniture
         </div>
 
-        <ion-scroll direction="x" overflow-scroll="true" scrollbar-x="false" has-bouncing="true">
+        <ion-scroll has-bouncing="true" direction="x" overflow-scroll="false" scrollbar-x="false">
             <div class = "row scroll-horiz">
                 <div ng-click="viewDetails(item)" ng-repeat="item in categories.Furniture" class="card col col-20 thumb-card">
                     <h5 class="product-head-text text-center"> {{ item.name.slice(0, 10) }}</h5>
@@ -59,7 +59,7 @@
             Gifts
         </div>
 
-        <ion-scroll direction="x" overflow-scroll="true" scrollbar-x="false" has-bouncing="true">
+        <ion-scroll has-bouncing="true" direction="x" overflow-scroll="false" scrollbar-x="false">
             <div class = "row scroll-horiz">
                 <div ng-click="viewDetails(item)" ng-repeat="item in categories.Gifts" class="card col col-20 thumb-card">
                     <h5 class="product-head-text text-center"> {{ item.name.slice(0, 10) }}</h5>
@@ -75,7 +75,7 @@
             Strollers
         </div>
 
-        <ion-scroll direction="x" overflow-scroll="true" scrollbar-x="false" has-bouncing="true">
+        <ion-scroll has-bouncing="true" direction="x" overflow-scroll="false" scrollbar-x="false">
             <div class = "row scroll-horiz">
                 <div ng-click="viewDetails(item)" ng-repeat="item in categories.Strollers" class="card col col-20 thumb-card">
                     <h5 class="product-head-text text-center"> {{ item.name.slice(0, 10) }}</h5>
@@ -91,7 +91,7 @@
             Toy
         </div>
 
-        <ion-scroll direction="x" overflow-scroll="true" scrollbar-x="false" has-bouncing="true">
+        <ion-scroll has-bouncing="true" direction="x" overflow-scroll="false" scrollbar-x="false">
             <div class = "row scroll-horiz">
                 <div ng-click="viewDetails(item)" ng-repeat="item in categories.Toy" class="card col col-20 thumb-card">
                     <h5 class="product-head-text text-center"> {{ item.name.slice(0, 10) }}</h5>

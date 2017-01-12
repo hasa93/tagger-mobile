@@ -240,9 +240,7 @@ background:  #7f8c8d;
 }
 
 /*scroll-content*/
-.list:last-child.card {
-    margin-bottom: 11px;
-}
+
 
 /*font styles*/
 .white{
