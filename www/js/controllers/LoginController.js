@@ -1,5 +1,5 @@
 angular.module("TaggerMobile")
-.controller('LoginCtrl',function($state, $scope, $ionicPopup, LoginService){
+.controller('LoginCtrl',function($state, $scope, $ionicPopup, LoginService,ionicToast){
 	$scope.user = {
 		uname: "",
 		passwd: ""
@@ -13,13 +13,11 @@ angular.module("TaggerMobile")
 		LoginService.loginUser($scope.user).then(function(response){
 			if(LoginService.isLoggedIn()){
 				$state.go('app.dash');
+				ionicToast.show('Loggged Successfully', 'bottom', false, 2500);
 			}
 			else{
-				console.log("Invalid login");
-				$ionicPopup.alert({
-					title: 'Invalid Login',
-					template: 'Please check your username and password'
-				});
+				ionicToast.show('Flaging Product', 'middle', false, 2500);
+				
 			}
 		});
 	}

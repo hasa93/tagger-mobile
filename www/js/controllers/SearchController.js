@@ -1,5 +1,5 @@
 angular.module("TaggerMobile")
-.controller('SearchCtrl', function($scope, $state, $ionicHistory, NfcService,RetailService,LoginService) {
+.controller('SearchCtrl',function($scope, $state, $ionicHistory, NfcService,RetailService,LoginService,ionicToast) {
   $scope.nfcService = NfcService;
 
 	$scope.$on('$ionicView.enter', function(){
@@ -16,8 +16,15 @@ angular.module("TaggerMobile")
   	$scope.flagProducts = function(){
   		console.log("flagging...");
   		$scope.user =LoginService.getUserProfile();
+ ionicToast.show('Flaging Product', 'bottom', false, 2500);
 
   		RetailService.flagProducts($scope.productDetails.id,$scope.user.id).then(function(result){
+      if (result.status=='FAILED') {
+            ionicToast.show('Failed to Tag', 'bottom', true, 1500);
+        }
+        else{
+            ionicToast.show('Correct Input.', 'bottom', true, 1500);
+        }
   			console.log(result);
   		});
   	};

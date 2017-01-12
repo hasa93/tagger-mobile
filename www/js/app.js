@@ -1,6 +1,6 @@
 // Ionic Starter App
 
-angular.module('TaggerMobile', ['ionic'])
+angular.module('TaggerMobile', ['ionic','ionic-toast'])
 .run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
