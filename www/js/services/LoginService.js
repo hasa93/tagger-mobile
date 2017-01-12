@@ -70,10 +70,11 @@ angular.module("TaggerMobile")
 	o.logOut = function(){
 		localStorage.setItem("token", "");
 		isLoggedIn = false;
+		profile = {};
 	}
 
 	o.isLoggedIn = function(){
-		return isLoggedIn;
+		return (profile.uname != "" && profile.uname != undefined);
 	}
 
 	return o;

@@ -1,7 +1,7 @@
 // Ionic Starter App
 
 angular.module('TaggerMobile', ['ionic','ionic-toast'])
-.run(function($ionicPlatform, $rootScope) {
+.run(function($ionicPlatform, $rootScope, $state, LoginService) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -34,6 +34,17 @@ angular.module('TaggerMobile', ['ionic','ionic-toast'])
       StatusBar.styleDefault();
     }
   });
+
+  $rootScope.$on('$stateChangeSuccess', function(event, toState){
+    console.log("State change...");
+    console.log(LoginService.getUserProfile());
+
+    if(toState.params){
+      if(toState.params.authenticate && !LoginService.isLoggedIn()){
+        $state.go('login');
+      }
+    }
+  });
 })
 .config(function($stateProvider,$urlRouterProvider, $ionicConfigProvider, $httpProvider, configProvider){
 
@@ -59,7 +70,10 @@ angular.module('TaggerMobile', ['ionic','ionic-toast'])
     url:'/app',
     abstract: true,
     templateUrl: 'templates/mainmenu.html',
-    controller: 'MainCtrl'
+    controller: 'MainCtrl',
+    params: {
+      authenticate: true
+    }
   })
 
   .state('app.dash',{
@@ -69,6 +83,9 @@ angular.module('TaggerMobile', ['ionic','ionic-toast'])
         templateUrl: 'templates/dashboard.html',
         controller: 'DashCtrl'
       }
+    },
+    params: {
+      authenticate: true
     }
   })
 
@@ -79,24 +96,26 @@ angular.module('TaggerMobile', ['ionic','ionic-toast'])
         templateUrl:'templates/voucher.html',
         controller:'VoucherCtrl'
       }
+    },
+    params: {
+      authenticate: true
     }
   })
 
-  .state('app.flaglist',{
-      url:'/flaglist',
-      views:{
-        'menuContent':{
-           templateUrl:'templates/flaglist.html',
-           controller:'FlagCtrl'
-        }
-      },
-      params: {
-          details:{}
+.state('app.flaglist',{
+    url:'/flaglist',
+    views:{
+      'menuContent':{
+         templateUrl:'templates/flaglist.html',
+         controller:'FlagCtrl'
       }
-    })
+    },
+    params: {
+      authenticate: true
+    }
+})
 
-
-  .state('app.product',{
+.state('app.product',{
       url:'/product',
       views:{
         'menuContent':{
@@ -105,19 +124,8 @@ angular.module('TaggerMobile', ['ionic','ionic-toast'])
         }
       },
       params: {
-          details:{}
-      }
-    })
-    .state('app.cartview',{
-      url:'/cartview',
-      views:{
-        'menuContent':{
-           templateUrl:'templates/cartview.html',
-           controller:'CartCtrl'
-        }
-      },
-      params: {
-          details:{}
+          details:{},
+          authenticate: true
       }
     })
 
@@ -129,8 +137,8 @@ angular.module('TaggerMobile', ['ionic','ionic-toast'])
         controller:'ProfileCtrl'
       }
     },
-    params:{
-      authentication: true
+    params: {
+      authenticate: true
     }
   })
 

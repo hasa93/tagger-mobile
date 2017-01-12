@@ -8,17 +8,14 @@ angular.module("TaggerMobile")
   	}
 
   	$scope.vouchers = function(){
-    	LoginService.logOut();
     	$state.go('app.vouchers');
   	}
 
   	$scope.flagged = function(){
-    	LoginService.logOut();
     	$state.go('app.flaglist');
   	}
 
   	$scope.profile = function(){
-    	LoginService.logOut();
     	$state.go('app.profile');
   	}
 });

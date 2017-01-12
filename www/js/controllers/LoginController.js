@@ -10,16 +10,15 @@ angular.module("TaggerMobile")
 	}
 
 	$scope.login = function(){
+		console.log("Logging In...");
 		LoginService.loginUser($scope.user).then(function(response){
 			if(LoginService.isLoggedIn()){
 				$state.go('app.dash');
-				ionicToast.show('Loggged Successfully', 'bottom', false, 2500);
 			}
-			else{
-				ionicToast.show('Flaging Product', 'middle', false, 2500);
-				
-			}
+		}, function(err){
+			console.log("Failed login");
+			ionicToast.show('Invalid Login!', 'bottom', false, 2500);
 		});
 	}
-	
+
 });

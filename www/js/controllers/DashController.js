@@ -1,5 +1,5 @@
 angular.module('TaggerMobile')
-.controller('DashCtrl', function($state,$scope, RetailService, NfcService,$ionicPopup, $timeout,$ionicSideMenuDelegate, LoginService) {
+.controller('DashCtrl', function($state,$scope, RetailService, NfcService,$ionicPopup, $timeout,$ionicSideMenuDelegate) {
       $scope.$on('$ionicView.enter', function(){
         console.log(LoginService.getUserProfile());
         $ionicSideMenuDelegate.canDragContent(false);
