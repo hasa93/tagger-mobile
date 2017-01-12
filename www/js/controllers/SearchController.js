@@ -23,7 +23,7 @@ angular.module("TaggerMobile")
             ionicToast.show('Failed to Tag', 'bottom', true, 1500);
         }
         else{
-            ionicToast.show('Correct Input.', 'bottom', true, 1500);
+            ionicToast.show('Flagged Successfull.', 'bottom', true, 1500);
         }
   			console.log(result);
   		});

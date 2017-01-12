@@ -22,6 +22,13 @@ angular.module("TaggerMobile")
 				});
 				return;
 			}
+			else if($scope.profile.fname=="" || $scope.profile.contact==""){
+				$ionicPopup.alert({
+					title:"Blank credential",
+					template:"Some of fields are blank"
+				});
+				return;
+			}
 			$state.go('app.dash');
 		}, function(err){
 			$ionicPopup.alert({

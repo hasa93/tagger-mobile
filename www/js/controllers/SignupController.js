@@ -31,10 +31,31 @@ angular.module("TaggerMobile")
 			});
 			return;
 		}
+		else if ($scope.user.uname.length<3) {
+			$ionicPopup.alert({
+				title:"Username",
+				template: "Username should be greater than 3"
+			});
+			return;
+		}
 		else if($scope.user.passwd != $scope.user.repasswd){
 			$ionicPopup.alert({
 				title: "Password Mismatch",
 				template: "Password re-type doesn't match"
+			});
+			return;
+		}
+		else if ($scope.user.passwd.length<3) {
+			$ionicPopup.alert({
+				title:"Password",
+				template: "Password should be greater than 3"
+			});
+			return;
+		}
+		else if ($scope.user.passwd.length>6) {
+			$ionicPopup.alert({
+				title:"Password",
+				template: "Password should be smaller than 7"
 			});
 			return;
 		}
