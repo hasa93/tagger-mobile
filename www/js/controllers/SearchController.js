@@ -62,5 +62,11 @@ angular.module("TaggerMobile")
       }
     };
 
+    RetailService.rateProduct($scope.productDetails.id, val).then(function(result){
+      console.log("Rating succeeded");
+    }, function(err){
+      console.log("Rating failed");
+    })
+
   }
 });
