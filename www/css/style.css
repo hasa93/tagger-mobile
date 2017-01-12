@@ -237,6 +237,12 @@ background:  #7f8c8d;
 .item-divider{
   background-color: #44BBFF;
   color: #ecf0f1;
+  width:65%;
+  height:5%;
+  border-radius: 22px 99px 22px 99px;
+  margin-left: 20%;
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 /*scroll-content*/
