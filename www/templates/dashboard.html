@@ -8,8 +8,25 @@
 
     <ion-content class="has-header skin">
         <div class="item item-divider text-center">
+            Toys
+        </div>
+
+        <ion-scroll has-bouncing="true" direction="x" overflow-scroll="false" scrollbar-x="false">
+            <div class = "row scroll-horiz">
+                <div ng-click="viewDetails(item)" ng-repeat="item in categories.Toys" class="card col col-20 thumb-card">
+                    <h5 class="product-head-text text-center"> {{ item.name.slice(0, 10) }}</h5>
+                    <div class="item item-body item-thumb">
+                        <img class="full-image" src = "{{ item.image }}">
+                    </div>
+                    <h5 class="product-head-text text-center"> Rs. {{ item.price.toFixed(2)}} </h5>
+                </div>
+            </div>
+        </ion-scroll>
+
+        <div class="item item-divider text-center">
             Bathing and Skin Care
         </div>
+
         <ion-scroll has-bouncing="true" direction="x" overflow-scroll="false" scrollbar-x="false">
             <div class = "row scroll-horiz">
                 <div on-double-tap = "viewDetails(item)" ng-repeat="item in categories['Bathing+and+Skin+Car']" class="list card col col-20 thumb-card">
@@ -87,20 +104,5 @@
             </div>
         </ion-scroll>
 
-        <div class="item item-divider text-center">
-            Toy
-        </div>
-
-        <ion-scroll has-bouncing="true" direction="x" overflow-scroll="false" scrollbar-x="false">
-            <div class = "row scroll-horiz">
-                <div ng-click="viewDetails(item)" ng-repeat="item in categories.Toy" class="card col col-20 thumb-card">
-                    <h5 class="product-head-text text-center"> {{ item.name.slice(0, 10) }}</h5>
-                    <div class="item item-body item-thumb">
-                        <img class="full-image" src = "{{ item.image }}">
-                    </div>
-                    <h5 class="product-head-text text-center"> Rs. {{ item.price.toFixed(2)}} </h5>
-                </div>
-            </div>
-        </ion-scroll>
     </ion-content>
 </ion-view>

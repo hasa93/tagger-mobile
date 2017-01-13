@@ -14,7 +14,7 @@ angular.module('TaggerMobile')
         'Furniture' : [],
         'Gifts' : [],
         'Strollers' : [],
-        'Toy' : []
+        'Toys' : []
     };
 
     $scope.search = function(){
