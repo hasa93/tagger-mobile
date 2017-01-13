@@ -24,17 +24,12 @@ angular.module("TaggerMobile")
 	}
 
 	$scope.signup = function(){
+		var level=0;
+		var input='';
 		if($scope.user.passwd == "" || $scope.user.repasswd == "" || $scope.user.uname == ""){
 			$ionicPopup.alert({
 				title: "Blank Credentials",
 				template: "Some of the fields are blank"
-			});
-			return;
-		}
-		else if ($scope.user.uname.length<3) {
-			$ionicPopup.alert({
-				title:"Username",
-				template: "Username should be greater than 3"
 			});
 			return;
 		}
@@ -45,20 +40,14 @@ angular.module("TaggerMobile")
 			});
 			return;
 		}
-		else if ($scope.user.passwd.length<3) {
+		else if ($scope.user.passwd.length<8) {
 			$ionicPopup.alert({
 				title:"Password",
-				template: "Password should be greater than 3"
+				template: "Password should be greater than 8 charachters"
 			});
 			return;
 		}
-		else if ($scope.user.passwd.length>6) {
-			$ionicPopup.alert({
-				title:"Password",
-				template: "Password should be smaller than 7"
-			});
-			return;
-		}
+		
 		else{
 			LoginService.signUpUser($scope.user).then(function(result){
 				if(result.status === "SUCCESS"){
