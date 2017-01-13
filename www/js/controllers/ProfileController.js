@@ -18,7 +18,7 @@ angular.module("TaggerMobile")
 			if(result.status === "ERROR"){
 				$ionicPopup.alert({
 					title: "Update Failed",
-					template: result.msg;
+					template: result.msg
 				});
 				return;
 			}
@@ -26,6 +26,13 @@ angular.module("TaggerMobile")
 				$ionicPopup.alert({
 					title:"Blank credential",
 					template:"Some of fields are blank"
+				});
+				return;
+			}
+			else if($scope.profile.contact != [0-9]){
+				$ionicPopup.alert({
+					title:"Contact",
+					template:"Contact must be Numbers"
 				});
 				return;
 			}

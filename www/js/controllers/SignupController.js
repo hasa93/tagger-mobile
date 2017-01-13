@@ -40,7 +40,7 @@ angular.module("TaggerMobile")
 			});
 			return;
 		}
-		else if ($scope.user.passwd.length<8) {
+		else if ($scope.user.passwd.length<3) {
 			$ionicPopup.alert({
 				title:"Password",
 				template: "Password should be greater than 8 charachters"
