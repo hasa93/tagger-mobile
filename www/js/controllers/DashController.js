@@ -5,7 +5,7 @@ angular.module('TaggerMobile')
     $ionicSideMenuDelegate.canDragContent(false);
     });
     $scope.$on('$ionicView.leave', function(){
-    $ionicSideMenuDelegate.canDragContent(true);
+    $ionicSideMenuDelegate.canDragContent(false);
     });
 
   	$scope.recent = [];
