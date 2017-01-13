@@ -2,6 +2,14 @@ angular.module("TaggerMobile")
 .controller('MainCtrl', function($scope, $state, LoginService) {
 	console.log("In main controller...");
 
+  $scope.$watch(function() { return LoginService.getUserProfile() }, function(newVal){
+    console.log("Scope is changing...");
+    console.log(newVal);
+
+    $scope.userName = newVal.fname + " " + newVal.lname;
+    $scope.uname = newVal.uname;
+  }, true);
+
 	$scope.logout = function(){
     	LoginService.logOut();
     	$state.go('login');

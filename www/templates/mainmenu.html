@@ -1,5 +1,5 @@
 <ion-side-menus>
-    <ion-side-menu-content>
+    <ion-side-menu-content drag-content="false">
         <ion-nav-bar align-title="center" class="bar-dark nav-title-slide-ios7">
           <ion-nav-back-button class="button-icon button-clear"><i class="ion-arrow-left-c"></i> </ion-nav-back-button>
         </ion-nav-bar>
@@ -10,6 +10,8 @@
         <div class="profile-banner-small">
           <div class="col col-bottom text-left">
               <img class="profile-pic-small" src="img/profile.jpg" />
+              <h2 ng-if="userName != ''" class="banner-name"> {{ userName }} </h2>
+              <h2 ng-if="userName == ''" class="banner-name"> {{ uname }} </h2>
           </div>
         </div>
         <ion-content class="profile-header">
