@@ -256,12 +256,13 @@ background:  #7f8c8d;
   background-color: #44BBFF;
   color: #ecf0f1;
   width:65%;
-  height:5%;
+  height:6%;
   border-radius: 22px 99px 22px 99px;
   margin-left: 20%;
   margin-top: 2%;
   margin-bottom: 2%;
   padding: 4px;
+  font-size: large;
 }
 
 /*scroll-content*/
@@ -300,3 +301,12 @@ background:  #7f8c8d;
 .skin{
   background-color:#e0ecff;
 }
+
+.age-range{
+  width:100px;
+  height:40px;
+  border-radius: 10px 10px 10px 10px;
+  border:5px solid #FFFFFF;
+  background-color:#874D9E;
+}
+
