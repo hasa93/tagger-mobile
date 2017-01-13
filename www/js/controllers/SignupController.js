@@ -65,7 +65,15 @@ angular.module("TaggerMobile")
 					logInAfterSignUp();
 				}
 				else{
-					$state.go('signup');
+					$ionicPopup.alert({
+						title:"User Exists",
+						template: "Please choose a different user name"
+					});
+
+					$scope.user = { uname: '',
+							passwd: '',
+							repasswd: ''
+					};
 				}
 			}, function(error){
 				$state.go('signup');

@@ -18,7 +18,7 @@ angular.module("TaggerMobile")
 			if(result.status === "ERROR"){
 				$ionicPopup.alert({
 					title: "Update Failed",
-					template: "Oops something went wrong..."
+					template: result.msg;
 				});
 				return;
 			}
