@@ -5,7 +5,6 @@
     <ion-nav-buttons side="right">
         <button class="button button-icon icon ion-android-search" ng-click=search()></button>
     </ion-nav-buttons>
-
     <ion-content class="has-header skin">
         <div class="item item-divider text-center">
             Toys
@@ -29,7 +28,7 @@
 
         <ion-scroll has-bouncing="true" direction="x" overflow-scroll="false" scrollbar-x="false">
             <div class = "row scroll-horiz">
-                <div on-double-tap = "viewDetails(item)" ng-repeat="item in categories['Bathing+and+Skin+Car']" class="list card col col-20 thumb-card">
+                <div  ng-click = "viewDetails(item)" ng-repeat="item in categories['Bathing+and+Skin+Car']" class="list card col col-20 thumb-card">
                     <h5 class="product-head-text text-center"> {{ item.name.slice(0, 10) }} </h5>
                     <div class="item item-body item-thumb">
                         <img class="full-image" src="{{ item.image }}">
@@ -105,4 +104,5 @@
         </ion-scroll>
 
     </ion-content>
+    </ion-scroll>
 </ion-view>
