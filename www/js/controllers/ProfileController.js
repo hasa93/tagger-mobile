@@ -1,7 +1,10 @@
 angular.module("TaggerMobile")
 .controller('ProfileCtrl', function($scope, $state, $ionicPopup, LoginService){
-	$scope.shadowProfile = LoginService.getUserProfile();
-	$scope.profile = LoginService.getUserProfile();
+
+	$scope.$on('$ionicView.enter', function(){
+		$scope.shadowProfile = LoginService.getUserProfile();
+		$scope.profile = LoginService.getUserProfile();
+	});
 
 	$scope.update = function(){
 		Object.keys($scope.profile).map(function(field){
@@ -29,10 +32,10 @@ angular.module("TaggerMobile")
 				});
 				return;
 			}
-			else if($scope.profile.contact != [0-9]){
+			else if(!(/^[0-9]([0-9]{1,9}$)/g.test($scope.profile.contact))){
 				$ionicPopup.alert({
 					title:"Contact",
-					template:"Contact must be Numbers"
+					template:"Please check your mobile number again"
 				});
 				return;
 			}
