@@ -1,0 +1,44 @@
+<ion-nav-view view-title="Profile">
+	<ion-view>
+	   <div class="profile-banner">
+        <div class="row">
+            <ion-icon></ion-icon>
+            <div class="col col-top text-center">
+                <img class="profile-pic" src="../img/profile.jpg" />
+            </div>
+            </div>
+            <div class="row">
+            <div class="col col-bottom text-center">
+                <h1 class="profile-name">Alen Melen</h1>
+                <h2 class="profile-destination">Managing Director</h2>
+            </div>
+        </div>
+       </div>
+		<div class="list">
+      		<ul class="list">
+        		<li  class="item ion-android-contact" style="size: 48">  Username</li>
+        		 	<label class="item item-input">
+    					<input type="text">
+ 					</label>
+        		<li class="item ion-android-lock" style="size: 48">  Password</li>
+        		    <label class="item item-input">
+    					<input type="password">
+ 					</label>
+        		<li class="item ion-android-lock" style="size: 48">  Confirm Password</li>
+        			<label class="item item-input">
+    					<input type="password">
+ 					</label>
+      		</ul>
+    	</div>
+    	<div class="row">
+    	    <div class="col text-left">
+    			<button class="button button-outline button-positive" ng-click="skip()">Skip</button>
+    		</div>
+    		<div class="col text-right">
+    			<button class="button button-assertive" ng-click="finish()">Finish</button>
+    		</div>
+    		
+    	</div>
+    	
+	</ion-view>
+</ion-nav-view>

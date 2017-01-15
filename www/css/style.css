@@ -1,1 +1,312 @@
-/* Empty. Add your own CSS if you like */
+.bg-transparent{
+  background: transparent;
+}
+
+/* Login Styles */
+
+.login-view{
+  background: url("../img/login-splash.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.glass-input{
+  border: 0;
+  border-bottom: 2px solid white;
+}
+
+label.glass-input > input{
+  color: white;
+  margin-bottom: 2%;
+}
+
+.login-header{
+  height: 32vh;
+}
+
+.login-body{
+  height: 47vh;
+}
+/* /Login Styles */
+
+/* Profile Styles */
+.profile-banner{
+  height: 37vh;
+  background-color:#7f8c8d;
+  background-size: cover;
+}
+
+.profile-banner-small{
+  height: 25vh;
+  /*background-color:#0C0432;*/
+  background: url("../img/cover.jpg") no-repeat ;
+  background-size: 300px;
+}
+
+.profile-name{
+  display: inline-block;
+  color: white;
+  font-size: 1.3em;
+}
+
+.banner-name{
+    display: inline-block;
+    color: white;
+    font-size: 1.5em;
+    font-weight: 500;
+    position: absolute;
+    top: 5%;
+    left: 31%;
+}
+
+.profile-destination{
+  color: red;
+  font-size: 1.0em;
+}
+
+.profile-badge{
+  font-size: 0.8em;
+}
+
+.profile-pic{
+  display: inline-block;
+  border-radius: 100%;
+  width: 20vh;
+  height: 20vh;
+  border:5px solid #eee;
+  box-shadow: 0 3px 2px rgba(0,0,0,0.3);
+}
+
+.profile-pic-small{
+  display: inline-block;
+  border-radius: 100%;
+  width: 10vh;
+  height: 10vh;
+  margin-top: 12%;
+}
+
+
+/* /Profile Styles */
+
+.profile-header{
+  margin-top: 40%;
+}
+
+/* Dashboard Styles */
+.dash-content{
+  background: #ecf0f1;
+}
+
+.nav-buttons{
+  position: fixed;
+  right: 15%;
+  bottom: 2%;
+}
+
+.nav-buttons > .fab{
+  background-color: #e74c3c;
+}
+
+.item-thumb{
+  height:22vh;
+  overflow: hidden;
+}
+/* /Dashboard Styles */
+
+/*Dark Theme */
+.found{
+  background: #2ecc71;
+}
+.disable{
+  background: #e74c3c;
+}
+/*fab design*/
+.fab {
+    position: fixed;
+    bottom: 10%;
+    left:80%;
+    border-radius: 50%;
+    box-sizing: border-box;
+    border: none;
+    z-index: 20;
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    transition: 0.2s linear;
+    transition-property: transform, box-shadow;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.fab.activated {
+    opacity: 0.9;
+    -webkit-transform: translate3d(0, -1px, 0);
+    transform: translate3d(0, -1px, 0);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+}
+
+.fab .icon {
+    font-size: 24px;
+    color: #ffffff;
+}
+.flaged{
+ background:  rgb(63, 81, 181);
+}
+.unflaged{
+background:  #7f8c8d;
+}
+
+.thumb-card{
+  height: 87%;
+}
+
+/*Horizontal Scrolling */
+.scroll-horiz {
+  width: 200%;
+  height:35%;
+}
+/*Accodition Style */
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+
+
+/* NFC Styles */
+.nfc-enable{
+  background-color: #2ecc71;
+
+}
+
+.nfc-disable{
+  background-color: #e74c3c;
+}
+
+/* Text styles */
+.text-white{
+  color:white;
+}
+
+/*product styles */
+.product-head-text{
+  color:#3498db;
+}
+/* /product styles */
+
+/* Voucher View */
+.voucher-header{
+  font-size: x-large;
+  margin-bottom: 4%;
+}
+
+.header-sub{
+  font-size: small;
+}
+
+.branch-name{
+  color: #a8a8a8;
+  font-style: italic;
+  margin-bottom: 4%;
+  font-size: x-small;
+}
+
+.expire-label{
+  color: #646363;
+  margin-bottom: 2%;
+}
+
+.label-green{
+  color: #1b9900;
+}
+
+.label-red{
+  color: #990000;
+}
+
+.voucher-card{
+  margin: 4%;
+}
+/* /Voucher View */
+
+/*Product View*/
+.image-banner{
+  display: block;
+  margin:auto;
+}
+
+.unflag-border{
+  background-color: white !important;
+  border: 4px solid #e74c3c;
+}
+
+.fab.unflag-border > .ion-flag{
+  color: #e74c3c;
+}
+/* /Product View*/
+/* Item Divider */
+.item-divider{
+  background-color: #44BBFF;
+  color: #ecf0f1;
+  width:65%;
+  height:6%;
+  border-radius: 22px 99px 22px 99px;
+  margin-left: 20%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 4px;
+  font-size: large;
+}
+
+/*scroll-content*/
+
+
+/*font styles*/
+.white{
+  color: #ecf0f1;
+  text-align: center;
+  padding-bottom: 12px;
+}
+
+
+.product-card{
+  display: flex;
+}
+
+.voucher-center{
+  font-size: 90px;text-align:center;color:#f1c40f;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.age-range{
+  width:100px;
+  height:40px;
+  border-radius: 15px 20px 10px;
+  border:5px solid #FFFFFF;
+  background-color:#874D9E;
+}
+
+
+.skin{
+  background-color:#e0ecff;
+}
+
+.age-range{
+  width:100px;
+  height:40px;
+  border-radius: 10px 10px 10px 10px;
+  border:5px solid #FFFFFF;
+  background-color:#874D9E;
+}
+
