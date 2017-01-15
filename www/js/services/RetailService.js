@@ -5,6 +5,7 @@ angular.module("TaggerMobile")
 	var id = "";
 
 	var getImageUrls = function(images){
+		if(images.length)
 		images.map(function(elem){
 			elem.image = baseUrl + elem.image;
 		});
@@ -163,6 +164,21 @@ angular.module("TaggerMobile")
 			deferred.resolve(response.data);
 		},function(err){
 			deferred.reject({status: "ERROR",msg:err});
+		});
+
+		return deferred.promise;
+	}
+
+	o.getProductByName = function(name){
+		var deferred = $q.defer();
+
+		$http.get(baseUrl + 'api/product/find/name/' + name).then(function(response){
+			console.log(response);
+			getImageUrls(response.data);
+			console.log(response.data);
+			deferred.resolve(response.data);
+		}, function(err){
+			deferred.reject({ status: 'ERROR', error: err });
 		});
 
 		return deferred.promise;

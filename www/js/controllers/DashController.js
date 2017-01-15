@@ -1,5 +1,5 @@
 angular.module('TaggerMobile')
-.controller('DashCtrl', function($state,$scope, RetailService, NfcService,$ionicPopup, $timeout,$ionicSideMenuDelegate) {
+.controller('DashCtrl', function($state,$scope, RetailService, ionicToast, NfcService,$ionicPopup, $ionicModal, $timeout,$ionicSideMenuDelegate) {
     $scope.$on('$ionicView.enter', function(){
     console.log(LoginService.getUserProfile());
     $ionicSideMenuDelegate.canDragContent(false);
@@ -18,37 +18,58 @@ angular.module('TaggerMobile')
         'Toys' : []
     };
 
+    $scope.searchResults = [];
+
     $scope.search = function(){
-    $scope.data = {};
+    $scope.query = { name: '' };
     var myPopup = $ionicPopup.show({
-    template: '<input type="text" ng-model="data.searchid" placeholder= "Search">',
+    template: '<input type="text" ng-model="query.name" placeholder= "Search">',
     title: 'Search',
     scope: $scope,
     buttons: [
       { text: 'Cancel' },
       {
         text: '<b>Search</b>',
-        type: 'button-positive',
-        onTap: function(e) {
-          if (!$scope.data.wifi) {
-
-            e.preventDefault();
-          } else {
-            return $scope.data.wifi;
-          }
-        }
+        type: 'button-positive'
       }
     ]
   });
 
   myPopup.then(function(res) {
-    console.log('Tapped!', res);
+    console.log(res);
+    console.log($scope.query.name);
+
+    if($scope.query.name != ''){
+      RetailService.getProductByName($scope.query.name).then(function(products){
+        if(products.length == 0){
+          ionicToast.show('No Products Found', 'bottom', false, 2500);
+          return;
+        }
+
+        if(products.length == 1){
+          $state.go('app.product', { details: products[0] });
+          return;
+        }
+
+        $scope.searchResults = products;
+        $scope.productModal.show();
+      }, function(err){
+          ionicToast.show('Failed search...', 'bottom', false, 2500);
+      });
+    }
+  });
+ };
+
+  $scope.productModal = $ionicModal.fromTemplateUrl('templates/productpopup.html',{
+    scope: $scope,
+    animation: 'slide-in-up'
+  }).then(function(modal){
+    $scope.productModal = modal;
   });
 
-  $timeout(function() {
-     myPopup.close();
-  }, 60000);
- };
+  $scope.$on('$destroy', function() {
+      $scope.productModal.remove();
+  });
 
 	$scope.refreshRecentList = function(){
       Object.keys($scope.categories).map(function(category){
@@ -63,6 +84,7 @@ angular.module('TaggerMobile')
  	}
 
    $scope.viewDetails = function(item){
+     $scope.productModal.hide();
      $state.go('app.product', { details: item });
    }
 
